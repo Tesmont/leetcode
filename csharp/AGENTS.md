@@ -24,6 +24,8 @@ The AI may:
 ## Forbidden actions
 
 The AI must not:
+- implement solution logic when asked to create boilerplate
+- add partial implementations, TODO algorithms, helper methods, loops, conditionals, or placeholder returns to boilerplate solutions
 - add extra projects
 - add dependency injection
 - add logging
@@ -67,8 +69,21 @@ When creating a new problem:
 
 - create class Solution
 - create method with correct signature
-- DO NOT implement logic
-- method must throw NotImplementedException
+- DO NOT implement any solution logic
+- DO NOT add partial implementations
+- DO NOT add loops, conditionals, helper methods, private methods, local functions, comments describing algorithm steps, TODO algorithm bodies, or placeholder return values
+- the method body must contain only `throw new System.NotImplementedException();`
+
+When creating an alternative implementation:
+
+- create a new subdirectory next to the main `Solution.cs`
+- create `Solution.cs` inside that subdirectory
+- use the alternative approach name as the subdirectory name
+- create class `Solution`
+- create the method with the same public signature as the main solution
+- DO NOT implement any solution logic
+- the method body must contain only `throw new System.NotImplementedException();`
+- do not modify the main implementation unless explicitly requested
 
 Example:
 
@@ -92,9 +107,32 @@ Tests:
 - may include simple edge cases
 - must not be empty or commented
 
+When a problem has more than one implementation approach:
+
+- rewrite duplicated inline test cases into a shared test helper
+- keep the shared helper under the same problem test directory
+- create one test class for the main approach
+- create one test class in a mirrored subdirectory for each alternative approach
+- each approach test class must use the same shared test cases
+- each approach test class must instantiate only its own `Solution` class
+- do not use interfaces, dependency injection, reflection, or abstract test frameworks unless explicitly requested
+
+Example:
+
+tests/
+  LeetCode.Tests/
+    P00002AddTwoNumbers/
+      SolutionTestCases.cs
+      SolutionTests.cs
+      Recursive/
+        SolutionTests.cs
+      Stack/
+        SolutionTests.cs
+
 Expected state:
-- Solution throws exception
-- Tests already exist and call the method
+- every newly created boilerplate `Solution` method throws `System.NotImplementedException`
+- tests already exist and call the method
+- tests may fail until the corresponding solution approach is implemented
 
 ## Solution file rules
 
