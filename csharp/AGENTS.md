@@ -143,6 +143,13 @@ When given a problem:
 6. create SolutionTests.cs
 7. add tests based on problem examples
 
+## Summary rules
+
+For each solution added:
+- add an XML summary block in Solution.cs
+- include the LeetCode problem link in the summary block
+- include the full problem number and name in the summary block
+
 ## Priority
 
 1. correctness of structure

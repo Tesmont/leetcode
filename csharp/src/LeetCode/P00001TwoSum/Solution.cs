@@ -2,12 +2,19 @@ using System.Text.Json.Serialization;
 
 namespace LeetCode.P00001TwoSum;
 
+/// <summary>
+/// LeetCode #1 - Two Sum.
+/// Problem: https://leetcode.com/problems/two-sum/
+/// </summary>
+
 public sealed class Solution
 {
     public int[] TwoSum(int[] nums, int target)
     {
-        Dictionary<int, int> dict = new();
-        dict[nums[0]] = 0;
+        Dictionary<int, int> dict = new(nums.Length)
+        {
+            [nums[0]] = 0
+        };
 
         for (int i = 1; i < nums.Length; i++)
         {
