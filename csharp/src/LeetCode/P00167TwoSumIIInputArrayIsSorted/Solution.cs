@@ -15,16 +15,16 @@ public sealed class Solution
             int sum = numbers[index1] + numbers[index2];
             if (sum == target)
             {
-                return [++index1, ++index2];
+                return [index1 + 1, index2 + 1];
             }
 
             if (sum < target)
             {
-                ++index1;
+                index1++;
             }
             else
             {
-                --index2;
+                index2--;
             }
         }
     }

@@ -26,6 +26,6 @@ public sealed class Solution
             dict[num] = i;
         }
 
-        return [];
+        throw new InvalidOperationException("No solution found.");
     }
 }

@@ -2,6 +2,10 @@ root = true
 
 # All files
 [*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
 indent_style = space
 
 # Xml files
@@ -80,6 +84,11 @@ dotnet_style_prefer_simplified_interpolation = true:suggestion
 
 # Field preferences
 dotnet_style_readonly_field = true:warning
+
+# Analyzer preferences
+dotnet_diagnostic.CA1822.severity = silent
+dotnet_diagnostic.IDE0005.severity = warning
+dotnet_code_quality.CA1822.api_surface = private, internal, protected, protected_internal, private_protected
 
 # Parameter preferences
 dotnet_code_quality_unused_parameters = all:suggestion
