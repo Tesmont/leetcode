@@ -220,6 +220,7 @@ Tests:
 - must call the solution method
 - must use examples from the problem statement
 - may include simple edge cases
+- may include additional test cases at the AI's discretion when they improve confidence or coverage
 - must not be empty or commented
 - must not implement or duplicate the solution algorithm
 - must not make tests pass by changing solution boilerplate

@@ -10,7 +10,7 @@ public sealed class Solution
     {
         int leftIndex = 0;
         int rightIndex = s.Length - 1;
-        
+
         while (leftIndex < rightIndex)
         {
             char buf = s[leftIndex];
