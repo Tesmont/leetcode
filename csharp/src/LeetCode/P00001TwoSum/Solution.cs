@@ -9,21 +9,21 @@ public sealed class Solution
 {
     public int[] TwoSum(int[] nums, int target)
     {
-        Dictionary<int, int> dict = new(nums.Length)
+        Dictionary<int, int> indexByNumber = new(nums.Length)
         {
             [nums[0]] = 0
         };
 
         for (int i = 1; i < nums.Length; i++)
         {
-            int num = nums[i];
-            int addend = target - num;
-            if (dict.TryGetValue(addend, out int addendIndex))
+            int number = nums[i];
+            int complement = target - number;
+            if (indexByNumber.TryGetValue(complement, out int complementIndex))
             {
-                return [addendIndex, i];
+                return [complementIndex, i];
             }
 
-            dict[num] = i;
+            indexByNumber[number] = i;
         }
 
         throw new InvalidOperationException("No solution found.");

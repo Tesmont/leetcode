@@ -13,9 +13,9 @@ public sealed class Solution
 
         while (leftIndex < rightIndex)
         {
-            char buf = s[leftIndex];
+            char temp = s[leftIndex];
             s[leftIndex] = s[rightIndex];
-            s[rightIndex] = buf;
+            s[rightIndex] = temp;
 
             leftIndex++;
             rightIndex--;

@@ -10,42 +10,42 @@ public sealed class Solution
     {
         for (int i = 0; i < numbers.Length - 1; i++)
         {
-            int difference = target - numbers[i];
-            if (TryFind(numbers, i + 1, difference, out int differenceIndex))
+            int complement = target - numbers[i];
+            if (TryFind(numbers, i + 1, complement, out int complementIndex))
             {
-                return [i + 1, differenceIndex + 1];
+                return [i + 1, complementIndex + 1];
             }
         }
 
         throw new InvalidOperationException("No solution found.");
     }
 
-    private static bool TryFind(int[] numbers, int startIndex, int value, out int valueIndex)
+    private static bool TryFind(int[] numbers, int startIndex, int target, out int foundIndex)
     {
-        int endIndex = numbers.Length;
+        int leftIndex = startIndex;
+        int rightExclusiveIndex = numbers.Length;
 
-        while (startIndex < endIndex)
+        while (leftIndex < rightExclusiveIndex)
         {
-            valueIndex = startIndex + (endIndex - startIndex) / 2;
-
-
-            int number = numbers[valueIndex];
-            if (number == value)
+            int middleIndex = leftIndex + (rightExclusiveIndex - leftIndex) / 2;
+            int number = numbers[middleIndex];
+            if (number == target)
             {
+                foundIndex = middleIndex;
                 return true;
             }
 
-            if (number > value)
+            if (number > target)
             {
-                endIndex = valueIndex;
+                rightExclusiveIndex = middleIndex;
             }
             else
             {
-                startIndex = valueIndex + 1;
+                leftIndex = middleIndex + 1;
             }
         }
 
-        valueIndex = 0;
+        foundIndex = 0;
         return false;
     }
 }

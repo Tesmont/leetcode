@@ -8,21 +8,31 @@ public sealed class Solution
 {
     public int[] SortedSquares(int[] nums)
     {
-        nums[0] *= nums[0];
-        int firstNum = nums[0];
-        for (int lastIndex = nums.Length - 1; lastIndex > 0; lastIndex--)
-        {
-            nums[lastIndex] *= nums[lastIndex];
-            int lastNum = nums[lastIndex];
+        int[] result = new int[nums.Length];
+        int writeIndex = nums.Length - 1;
 
-            if (firstNum > lastNum)
+        int leftIndex = 0;
+        int rightIndex = writeIndex;
+
+        while (writeIndex >= 0)
+        {
+            int leftSquare = nums[leftIndex] * nums[leftIndex];
+            int rightSquare = nums[rightIndex] * nums[rightIndex];
+
+            if (leftSquare > rightSquare)
             {
-                nums[0] = lastNum;
-                nums[lastIndex] = firstNum;
-                firstNum = lastNum;
+                result[writeIndex] = leftSquare;
+                leftIndex++;
             }
+            else
+            {
+                result[writeIndex] = rightSquare;
+                rightIndex--;
+            }
+
+            writeIndex--;
         }
 
-        return nums;
+        return result;
     }
 }

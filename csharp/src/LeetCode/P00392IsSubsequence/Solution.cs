@@ -8,22 +8,22 @@ public sealed class Solution
 {
     public bool IsSubsequence(string s, string t)
     {
-        int sIndex = 0;
-        int tIndex = 0;
+        int subsequenceIndex = 0;
+        int textIndex = 0;
 
-        while (sIndex < s.Length)
+        while (subsequenceIndex < s.Length)
         {
-            if (tIndex == t.Length)
+            if (textIndex == t.Length)
             {
                 return false;
             }
 
-            if (s[sIndex] == t[tIndex])
+            if (s[subsequenceIndex] == t[textIndex])
             {
-                sIndex++;
+                subsequenceIndex++;
             }
 
-            tIndex++;
+            textIndex++;
         }
 
         return true;

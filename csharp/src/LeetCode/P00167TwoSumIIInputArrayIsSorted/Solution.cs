@@ -8,23 +8,24 @@ public sealed class Solution
 {
     public int[] TwoSum(int[] numbers, int target)
     {
-        int index1 = 0;
-        int index2 = numbers.Length - 1;
+        int leftIndex = 0;
+        int rightIndex = numbers.Length - 1;
+
         while (true)
         {
-            int sum = numbers[index1] + numbers[index2];
+            int sum = numbers[leftIndex] + numbers[rightIndex];
             if (sum == target)
             {
-                return [index1 + 1, index2 + 1];
+                return [leftIndex + 1, rightIndex + 1];
             }
 
             if (sum < target)
             {
-                index1++;
+                leftIndex++;
             }
             else
             {
-                index2--;
+                rightIndex--;
             }
         }
     }
