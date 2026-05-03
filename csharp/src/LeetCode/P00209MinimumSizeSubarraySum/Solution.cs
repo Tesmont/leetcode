@@ -16,7 +16,7 @@ public sealed class Solution
         {
             windowTotal += nums[rightIndex];
 
-            while(windowTotal >= target)
+            while (windowTotal >= target)
             {
                 minLength = Math.Min(minLength, rightIndex - leftIndex + 1);
                 windowTotal -= nums[leftIndex];
