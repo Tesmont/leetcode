@@ -20,6 +20,6 @@ public sealed class Solution
             seen[letter] = true;
         }
 
-        throw new System.InvalidOperationException();
+        throw new InvalidOperationException("No solution found.");
     }
 }
