@@ -8,28 +8,26 @@ public sealed class Solution
 {
     public int SubarraySum(int[] nums, int k)
     {
-        Dictionary<int, int> prefixSumCounts = new(nums.Length + 1)
+        Dictionary<int, int> previousPrefixSumCounts = new(nums.Length + 1)
         {
             [0] = 1
         };
 
-        int subarrayCount = 0;
-        int prefixSum = 0;
+        int matchingSubarrayCount = 0;
+        int currentPrefixSum = 0;
 
         foreach (int num in nums)
         {
-            prefixSum += num;
-            int targetPrefixSum = prefixSum - k;
+            currentPrefixSum += num;
+            int requiredPreviousPrefixSum = currentPrefixSum - k;
 
-            if (prefixSumCounts.TryGetValue(targetPrefixSum, out int count))
-            {
-                subarrayCount += count;
-            }
+            previousPrefixSumCounts.TryGetValue(requiredPreviousPrefixSum, out int matchingPreviousPrefixSumCount);
+            matchingSubarrayCount += matchingPreviousPrefixSumCount;
 
-            prefixSumCounts.TryGetValue(prefixSum, out count);
-            prefixSumCounts[prefixSum] = count + 1;
+            previousPrefixSumCounts.TryGetValue(currentPrefixSum, out int currentPrefixSumCount);
+            previousPrefixSumCounts[currentPrefixSum] = currentPrefixSumCount + 1;
         }
 
-        return subarrayCount;
+        return matchingSubarrayCount;
     }
 }

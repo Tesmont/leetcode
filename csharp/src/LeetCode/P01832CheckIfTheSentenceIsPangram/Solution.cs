@@ -8,7 +8,9 @@ public sealed class Solution
 {
     public bool CheckIfPangram(string sentence)
     {
-        Span<byte> seen = stackalloc byte[128];
+        const int lowercaseLetterSlots = 'z' + 1;
+
+        Span<byte> seen = stackalloc byte[lowercaseLetterSlots];
 
         foreach (char letter in sentence)
         {
@@ -21,8 +23,8 @@ public sealed class Solution
             seenLettersCount += seen[i];
         }
 
-        const int alphabetLenght = 'z' - 'a' + 1;
+        const int alphabetLength = 'z' - 'a' + 1;
 
-        return seenLettersCount == alphabetLenght;
+        return seenLettersCount == alphabetLength;
     }
 }

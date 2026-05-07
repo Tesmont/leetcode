@@ -8,7 +8,10 @@ public sealed class Solution
 {
     public int CountElements(int[] arr)
     {
-        Span<byte> seen = stackalloc byte[1002];
+        const int maxValue = 1_000;
+        const int seenSize = maxValue + 2;
+
+        Span<byte> seen = stackalloc byte[seenSize];
         foreach (int num in arr)
         {
             seen[num] = 1;

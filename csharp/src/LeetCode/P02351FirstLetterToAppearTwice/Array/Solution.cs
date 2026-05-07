@@ -8,7 +8,9 @@ public sealed class Solution
 {
     public char RepeatedCharacter(string s)
     {
-        Span<bool> seen = stackalloc bool[128];
+        const int lowercaseLetterSlots = 'z' + 1;
+
+        Span<bool> seen = stackalloc bool[lowercaseLetterSlots];
 
         foreach (char letter in s)
         {

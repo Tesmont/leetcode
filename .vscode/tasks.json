@@ -1,0 +1,64 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "test: problem filter",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "test",
+                "csharp/LeetCode.slnx",
+                "--filter",
+                "FullyQualifiedName~${input:problemFilter}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "test",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test: current problem",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "scripts/test-current-problem.sh",
+                "${relativeFileDirname}"
+            ],
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-NoProfile",
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-File",
+                    "scripts/test-current-problem.ps1",
+                    "${relativeFileDirname}"
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "scripts/test-current-problem.sh",
+                    "${relativeFileDirname}"
+                ]
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "problemFilter",
+            "type": "promptString",
+            "description": "Problem/test filter, e.g. P00001",
+            "default": "P00001"
+        }
+    ]
+}

@@ -8,35 +8,28 @@ public sealed class Solution
 {
     public int NumberOfSubarrays(int[] nums, int k)
     {
-        int result = 0;
-        int leftIndex = 0;
-        int windowCounter = 0;
+        const int maxNumsLength = 50_000;
+        const int oddCountFrequencySize = maxNumsLength + 1;
 
-        for (int rightIndex = 0; rightIndex < nums.Length; rightIndex++)
+        Span<int> oddCountFrequencies = stackalloc int[oddCountFrequencySize];
+        oddCountFrequencies[0] = 1;
+
+        int niceSubarrayCount = 0;
+        int currentOddCount = 0;
+
+        foreach (int num in nums)
         {
-            if (nums[rightIndex] % 2 != 0)
+            currentOddCount += num % 2;
+
+            if (currentOddCount >= k)
             {
-                windowCounter++;
+                int requiredPreviousOddCount = currentOddCount - k;
+                niceSubarrayCount += oddCountFrequencies[requiredPreviousOddCount];
             }
 
-            if (windowCounter < k)
-            {
-                continue;
-            }
-
-            while (windowCounter > k)
-            {
-                if (nums[leftIndex] % 2 != 0)
-                {
-                    windowCounter--;
-                }
-
-                leftIndex++;
-            }
-
-            result += rightIndex - leftIndex + 1;
+            oddCountFrequencies[currentOddCount]++;
         }
 
-        return result;
+        return niceSubarrayCount;
     }
 }

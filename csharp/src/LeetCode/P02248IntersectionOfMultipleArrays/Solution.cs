@@ -8,7 +8,10 @@ public sealed class Solution
 {
     public IList<int> Intersection(int[][] nums)
     {
-        Span<short> seen = stackalloc short[1001];
+        const int maxValue = 1_000;
+        const int seenSize = maxValue + 1;
+
+        Span<short> seen = stackalloc short[seenSize];
         for (int i = 0; i < nums.Length; i++)
         {
             for (int j = 0; j < nums[i].Length; j++)
