@@ -51,6 +51,51 @@
                 "isDefault": true
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "format: dotnet",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "format",
+                "csharp/LeetCode.slnx"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "git: add commit push",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "scripts/git-commit-push-summary.sh",
+                "${file}"
+            ],
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-NoProfile",
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-File",
+                    "scripts/git-commit-push-summary.ps1",
+                    "${file}"
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "scripts/git-commit-push-summary.sh",
+                    "${file}"
+                ]
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
         }
     ],
     "inputs": [
