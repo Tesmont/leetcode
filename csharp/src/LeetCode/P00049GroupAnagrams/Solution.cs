@@ -10,7 +10,7 @@ public sealed class Solution
     {
         const int firstLowercaseLetter = 'a';
         const int letterCountBufferLength = 'z' + 1;
-        
+
         Dictionary<string, List<string>> groupsDictionary = new(strs.Length);
         List<IList<string>> groups = [];
         Span<char> letterCounts = stackalloc char[letterCountBufferLength];
