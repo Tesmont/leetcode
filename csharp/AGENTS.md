@@ -5,6 +5,7 @@
 This repository stores personal LeetCode solutions in C#.
 
 The AI is allowed to:
+
 - take a LeetCode problem link or problem statement
 - create boilerplate code
 - create real tests based on the problem examples
@@ -14,6 +15,7 @@ The AI must not redesign the repository or introduce architecture.
 ## Allowed actions
 
 The AI may:
+
 - create a problem directory
 - create Solution.cs
 - create SolutionTests.cs
@@ -24,6 +26,7 @@ The AI may:
 ## Forbidden actions
 
 The AI must not:
+
 - implement solution logic when asked to create boilerplate
 - add partial implementations, TODO algorithms, helper methods, loops, conditionals, or placeholder returns to boilerplate solutions
 - add extra projects
@@ -62,6 +65,7 @@ csharp/
 ```
 
 Rules:
+
 - one problem = one directory
 - main implementation in root Solution.cs
 - alternatives in subdirectories
@@ -70,16 +74,19 @@ Rules:
 ## Naming
 
 Problem directories:
+
 - P00001TwoSum
 - P00002AddTwoNumbers
 - P00392IsSubsequence
 
 Files:
+
 - Solution.cs
 - SolutionTests.cs
 - SolutionTestCases.cs
 
 Alternative implementations:
+
 - Recursive
 - Stack
 - DynamicProgramming
@@ -87,6 +94,7 @@ Alternative implementations:
 - TwoPointers
 
 Avoid:
+
 - Temp
 - New
 - Try2
@@ -217,6 +225,7 @@ XML summary comments are allowed only for the Solution class.
 Tests must be real and runnable.
 
 Tests:
+
 - must call the solution method
 - must use examples from the problem statement
 - may include simple edge cases
@@ -252,6 +261,7 @@ tests/
 ```
 
 Expected state:
+
 - every newly created boilerplate Solution method throws `System.NotImplementedException`
 - tests already exist and call the method
 - tests may fail until the corresponding solution approach is implemented
@@ -295,6 +305,7 @@ For each solution added:
 ## Default behavior
 
 If unsure:
+
 - generate minimal boilerplate
 - do not implement the solution
 - do not add extra abstractions
