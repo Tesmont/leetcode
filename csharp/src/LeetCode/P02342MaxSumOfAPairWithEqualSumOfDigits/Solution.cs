@@ -36,7 +36,6 @@ public sealed class Solution
             }
         }
 
-
         return maxSum;
     }
 }
