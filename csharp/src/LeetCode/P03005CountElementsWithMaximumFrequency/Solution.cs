@@ -8,6 +8,24 @@ public sealed class Solution
 {
     public int MaxFrequencyElements(int[] nums)
     {
-        throw new System.NotImplementedException();
+        const int maxNumsLength = 100;
+        Span<byte> counts = stackalloc byte[maxNumsLength + 1];
+        int maxFrequencyElements = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            counts[nums[i]]++;
+            maxFrequencyElements = Math.Max(maxFrequencyElements, counts[nums[i]]);
+        }
+
+        int sum = 0;
+        for (int i = 0; i < counts.Length; i++)
+        {
+            if (counts[i] == maxFrequencyElements)
+            {
+                sum += maxFrequencyElements;
+            }
+        }
+
+        return sum;
     }
 }
