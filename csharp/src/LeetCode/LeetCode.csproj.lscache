@@ -97,6 +97,7 @@ P01133LargestUniqueNumber/Solution.cs
 P01189MaximumNumberOfBalloons/
  GenericWord/Solution.cs
  Solution.cs
+P01207UniqueNumberOfOccurrences/Solution.cs
 P01208GetEqualSubstringsWithinBudget/Solution.cs
 P01248CountNumberOfNiceSubarrays/
  PrefixSumDictionary/Solution.cs

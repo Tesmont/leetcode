@@ -107,6 +107,7 @@ P01189MaximumNumberOfBalloons/
  GenericWord/SolutionTests.cs
  SolutionTestCases.cs
  SolutionTests.cs
+P01207UniqueNumberOfOccurrences/SolutionTests.cs
 P01208GetEqualSubstringsWithinBudget/SolutionTests.cs
 P01248CountNumberOfNiceSubarrays/
  PrefixSumDictionary/SolutionTests.cs
