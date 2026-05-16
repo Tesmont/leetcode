@@ -1,4 +1,5 @@
 {
     "chat.disableAIFeatures": true,
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "dotnet.projectsystem.cacheInProjectFolder": false
 }
