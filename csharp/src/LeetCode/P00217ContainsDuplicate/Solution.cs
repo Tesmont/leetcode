@@ -8,7 +8,7 @@ public sealed class Solution
 {
     public bool ContainsDuplicate(int[] nums)
     {
-        HashSet<int> seen = [.. nums];
+        HashSet<int> seen = new(nums.Length);
 
         for (int i = 0; i < nums.Length; i++)
         {
