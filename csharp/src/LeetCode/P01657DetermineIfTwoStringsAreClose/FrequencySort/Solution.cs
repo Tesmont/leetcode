@@ -1,4 +1,4 @@
-namespace LeetCode.P01657DetermineIfTwoStringsAreClose;
+namespace LeetCode.P01657DetermineIfTwoStringsAreClose.FrequencySort;
 
 /// <summary>
 /// LeetCode 1657. Determine if Two Strings Are Close.
@@ -23,7 +23,6 @@ public sealed class Solution
             frequencies2[word2[i]]++;
         }
 
-        int[] frequencyDeltas = new int[word1.Length + 1];
         for (int i = startIndex; i <= endIndex; i++)
         {
             int frequency1 = frequencies1[i];
@@ -35,19 +34,13 @@ public sealed class Solution
             {
                 return false;
             }
-
-            frequencyDeltas[frequency1]++;
-            frequencyDeltas[frequency2]--;
         }
 
-        for (int i = 0; i < frequencyDeltas.Length; i++)
-        {
-            if (frequencyDeltas[i] != 0)
-            {
-                return false;
-            }
-        }
+        frequencies1 = frequencies1.Slice(startIndex);
+        frequencies2 = frequencies2.Slice(startIndex);
+        frequencies1.Sort();
+        frequencies2.Sort();
 
-        return true;
+        return frequencies1.SequenceEqual(frequencies2);
     }
 }
