@@ -23,7 +23,6 @@ public sealed class Solution
             frequencies2[word2[i]]++;
         }
 
-        int[] frequencyDeltas = new int[word1.Length + 1];
         for (int i = startIndex; i <= endIndex; i++)
         {
             int frequency1 = frequencies1[i];
@@ -36,13 +35,18 @@ public sealed class Solution
                 return false;
             }
 
-            frequencyDeltas[frequency1]++;
-            frequencyDeltas[frequency2]--;
-        }
+            bool hasMatchingFrequency = false;
+            for (int j = startIndex; j <= endIndex; j++)
+            {
+                if (frequencies2[j] == frequency1)
+                {
+                    frequencies2[j] = -1;
+                    hasMatchingFrequency = true;
+                    break;
+                }
+            }
 
-        for (int i = 0; i < frequencyDeltas.Length; i++)
-        {
-            if (frequencyDeltas[i] != 0)
+            if (!hasMatchingFrequency)
             {
                 return false;
             }
