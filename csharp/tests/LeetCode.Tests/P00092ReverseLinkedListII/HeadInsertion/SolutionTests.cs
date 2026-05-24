@@ -1,7 +1,7 @@
-using LeetCode.P00092ReverseLinkedListII;
+using LeetCode.P00092ReverseLinkedListII.HeadInsertion;
 using Xunit;
 
-namespace LeetCode.Tests.P00092ReverseLinkedListII;
+namespace LeetCode.Tests.P00092ReverseLinkedListII.HeadInsertion;
 
 public sealed class SolutionTests
 {

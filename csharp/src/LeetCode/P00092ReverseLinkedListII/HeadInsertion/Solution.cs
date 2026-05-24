@@ -1,4 +1,4 @@
-namespace LeetCode.P00092ReverseLinkedListII;
+namespace LeetCode.P00092ReverseLinkedListII.HeadInsertion;
 
 /// <summary>
 /// LeetCode #92 - Reverse Linked List II.
@@ -9,27 +9,21 @@ public sealed class Solution
     public ListNode? ReverseBetween(ListNode? head, int left, int right)
     {
         ListNode dummyNode = new(0, head);
-        ListNode before = dummyNode;
+        ListNode previousNode = dummyNode;
 
         for (int i = 1; i < left; i++)
         {
-            before = before.next!;
+            previousNode = previousNode.next!;
         }
 
-        ListNode sublistTail = before.next!;
-        ListNode? previous = null;
-        ListNode? current = sublistTail;
-
-        for (int i = left; i <= right; i++)
+        ListNode currentNode = previousNode.next!;
+        for (int i = left; i < right; i++)
         {
-            ListNode? next = current!.next;
-            current.next = previous;
-            previous = current;
-            current = next;
+            ListNode nextNode = currentNode.next!;
+            currentNode.next = nextNode.next;
+            nextNode.next = previousNode.next;
+            previousNode.next = nextNode;
         }
-
-        before.next = previous;
-        sublistTail.next = current;
 
         return dummyNode.next;
     }
