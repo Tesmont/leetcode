@@ -230,16 +230,21 @@ Tests:
 - must use examples from the problem statement
 - may include simple edge cases
 - may include additional test cases at the AI's discretion when they improve confidence or coverage
+- must keep test cases in `SolutionTestCases.cs`
+- must keep test methods in `SolutionTests.cs`
 - must not be empty or commented
 - must not implement or duplicate the solution algorithm
 - must not make tests pass by changing solution boilerplate
 
 It is expected that tests fail with `System.NotImplementedException` for newly generated boilerplate.
 
+Every problem test directory must contain:
+
+- `SolutionTestCases.cs` for shared test case data
+- `SolutionTests.cs` for the main approach test methods
+
 When a problem has more than one implementation approach:
 
-- rewrite duplicated inline test cases into a shared test helper
-- keep the shared helper under the same problem test directory
 - create one test class for the main approach
 - create one test class in a mirrored subdirectory for each alternative approach
 - each approach test class must use the same shared test cases
@@ -282,8 +287,10 @@ When given a problem:
 4. create method with correct signature
 5. add required public helper types in Solution.cs if the problem needs them
 6. throw NotImplementedException
-7. create SolutionTests.cs
-8. add tests based on problem examples
+7. create SolutionTestCases.cs
+8. create SolutionTests.cs
+9. add test cases based on problem examples to SolutionTestCases.cs
+10. add test methods that consume SolutionTestCases.cs to SolutionTests.cs
 
 ## Summary rules
 
