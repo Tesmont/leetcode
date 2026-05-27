@@ -6,7 +6,7 @@ namespace LeetCode.P00092ReverseLinkedListII;
 /// </summary>
 public sealed class Solution
 {
-    public ListNode? ReverseBetween(ListNode? head, int left, int right)
+    public ListNode ReverseBetween(ListNode head, int left, int right)
     {
         ListNode dummyNode = new(0, head);
         ListNode before = dummyNode;
@@ -31,7 +31,7 @@ public sealed class Solution
         before.next = previous;
         sublistTail.next = current;
 
-        return dummyNode.next;
+        return dummyNode.next!;
     }
 }
 

@@ -14,20 +14,15 @@ public sealed class SolutionTests
         int[] expected)
     {
         Solution solution = new();
-        ListNode? head = BuildList(values);
+        ListNode head = BuildList(values);
 
-        ListNode? actual = solution.ReverseBetween(head, left, right);
+        ListNode actual = solution.ReverseBetween(head, left, right);
 
         Assert.Equal(expected, ToArray(actual));
     }
 
-    private static ListNode? BuildList(int[] values)
+    private static ListNode BuildList(int[] values)
     {
-        if (values.Length == 0)
-        {
-            return null;
-        }
-
         ListNode head = new(values[0]);
         ListNode current = head;
 

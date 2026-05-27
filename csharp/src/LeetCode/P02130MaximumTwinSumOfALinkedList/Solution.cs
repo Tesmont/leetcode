@@ -6,16 +6,17 @@ namespace LeetCode.P02130MaximumTwinSumOfALinkedList;
 /// </summary>
 public sealed class Solution
 {
-    public int PairSum(ListNode? head)
+    public int PairSum(ListNode head)
     {
         const int maxNodesCount = 100_000;
         Span<int> vals = stackalloc int[maxNodesCount];
         int valsCount = 0;
-        while (head != null)
+        ListNode? current = head;
+        while (current != null)
         {
-            vals[valsCount] = head.val;
+            vals[valsCount] = current.val;
             valsCount++;
-            head = head.next;
+            current = current.next;
         }
 
         int maxSum = 0;

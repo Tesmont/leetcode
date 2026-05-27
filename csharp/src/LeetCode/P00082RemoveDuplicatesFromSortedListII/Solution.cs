@@ -6,7 +6,7 @@ namespace LeetCode.P00082RemoveDuplicatesFromSortedListII;
 /// </summary>
 public sealed class Solution
 {
-    public ListNode? DeleteDuplicates(ListNode head)
+    public ListNode? DeleteDuplicates(ListNode? head)
     {
         ListNode sentinel = new(0, head);
         ListNode previousDistinct = sentinel;

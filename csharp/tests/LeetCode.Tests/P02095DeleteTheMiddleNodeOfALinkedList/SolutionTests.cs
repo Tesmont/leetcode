@@ -10,7 +10,7 @@ public sealed class SolutionTests
     public void DeleteMiddle_DeletesMiddleNode(int[] values, int[] expected)
     {
         Solution solution = new();
-        ListNode? head = BuildList(values);
+        ListNode head = BuildList(values);
 
         ListNode? actual = solution.DeleteMiddle(head);
 

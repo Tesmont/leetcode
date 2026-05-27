@@ -10,20 +10,22 @@ public sealed class SolutionTests
     public void RemoveNthFromEnd_RemovesExpectedNode(int[] values, int n, int[] expected)
     {
         Solution solution = new();
-        ListNode? head = BuildList(values);
+        ListNode head = BuildList(values);
 
         ListNode? actual = solution.RemoveNthFromEnd(head, n);
 
         Assert.Equal(expected, ToArray(actual));
     }
 
-    private static ListNode? BuildList(int[] values)
+    private static ListNode BuildList(int[] values)
     {
-        ListNode? head = null;
+        ListNode head = new(values[0]);
+        ListNode current = head;
 
-        for (int i = values.Length - 1; i >= 0; i--)
+        for (int i = 1; i < values.Length; i++)
         {
-            head = new ListNode(values[i], head);
+            current.next = new ListNode(values[i]);
+            current = current.next;
         }
 
         return head;
