@@ -220,6 +220,15 @@ Do not add comments inside method bodies.
 
 XML summary comments are allowed only for the Solution class.
 
+## Nullability rules
+
+Follow the LeetCode problem statement and provided method signature exactly for nullability.
+
+- do not assume an argument can be `null` when the problem statement guarantees it is present
+- do not add defensive `null` handling, nullable annotations, or null-specific tests for arguments that are guaranteed non-null
+- use nullable annotations such as `ListNode?`, `TreeNode?`, or `string?` only when `null` is allowed by the problem statement, required by the helper type shape, or needed for fields such as `next`, `left`, or `right`
+- if `null` is part of the valid input domain, handle it explicitly in the solution and include focused tests for it
+
 ## Test rules
 
 Tests must be real and runnable.
