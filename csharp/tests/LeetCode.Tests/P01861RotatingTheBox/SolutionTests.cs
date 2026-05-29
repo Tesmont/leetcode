@@ -5,50 +5,8 @@ namespace LeetCode.Tests.P01861RotatingTheBox;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<char[][], char[][]> RotateTheBoxCases =>
-        new()
-        {
-            {
-                [
-                    ['#', '.', '#'],
-                ],
-                [
-                    ['.'],
-                    ['#'],
-                    ['#'],
-                ]
-            },
-            {
-                [
-                    ['#', '.', '*', '.'],
-                    ['#', '#', '*', '.'],
-                ],
-                [
-                    ['#', '.'],
-                    ['#', '#'],
-                    ['*', '*'],
-                    ['.', '.'],
-                ]
-            },
-            {
-                [
-                    ['#', '#', '*', '.', '*', '.'],
-                    ['#', '#', '#', '*', '.', '.'],
-                    ['#', '#', '#', '.', '#', '.'],
-                ],
-                [
-                    ['.', '#', '#'],
-                    ['.', '#', '#'],
-                    ['#', '#', '*'],
-                    ['#', '*', '.'],
-                    ['#', '.', '*'],
-                    ['#', '.', '.'],
-                ]
-            },
-        };
-
     [Theory]
-    [MemberData(nameof(RotateTheBoxCases))]
+    [MemberData(nameof(SolutionTestCases.RotateTheBoxCases), MemberType = typeof(SolutionTestCases))]
     public void RotateTheBox_ReturnsRotatedBoxAfterStonesFall(char[][] box, char[][] expected)
     {
         Solution solution = new();

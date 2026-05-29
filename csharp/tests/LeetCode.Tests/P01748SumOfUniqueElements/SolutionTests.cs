@@ -5,16 +5,8 @@ namespace LeetCode.Tests.P01748SumOfUniqueElements;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<int[], int> SumOfUniqueCases =>
-        new()
-        {
-            { [1, 2, 3, 2], 4 },
-            { [1, 1, 1, 1, 1], 0 },
-            { [1, 2, 3, 4, 5], 15 },
-        };
-
     [Theory]
-    [MemberData(nameof(SumOfUniqueCases))]
+    [MemberData(nameof(SolutionTestCases.SumOfUniqueCases), MemberType = typeof(SolutionTestCases))]
     public void SumOfUnique_ReturnsSumOfElementsThatAppearExactlyOnce(int[] nums, int expected)
     {
         Solution solution = new();

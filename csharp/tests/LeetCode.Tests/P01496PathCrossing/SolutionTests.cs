@@ -5,15 +5,8 @@ namespace LeetCode.Tests.P01496PathCrossing;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<string, bool> IsPathCrossingCases =>
-        new()
-        {
-            { "NES", false },
-            { "NESWW", true },
-        };
-
     [Theory]
-    [MemberData(nameof(IsPathCrossingCases))]
+    [MemberData(nameof(SolutionTestCases.IsPathCrossingCases), MemberType = typeof(SolutionTestCases))]
     public void IsPathCrossing_ReturnsWhetherPathCrossesItself(string path, bool expected)
     {
         Solution solution = new();

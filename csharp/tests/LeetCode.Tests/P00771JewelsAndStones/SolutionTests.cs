@@ -5,16 +5,8 @@ namespace LeetCode.Tests.P00771JewelsAndStones;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<string, string, int> NumJewelsInStonesCases =>
-        new()
-        {
-            { "aA", "aAAbbbb", 3 },
-            { "z", "ZZ", 0 },
-            { "A", "aA", 1 },
-        };
-
     [Theory]
-    [MemberData(nameof(NumJewelsInStonesCases))]
+    [MemberData(nameof(SolutionTestCases.NumJewelsInStonesCases), MemberType = typeof(SolutionTestCases))]
     public void NumJewelsInStones_ReturnsNumberOfStonesThatAreJewels(
         string jewels,
         string stones,

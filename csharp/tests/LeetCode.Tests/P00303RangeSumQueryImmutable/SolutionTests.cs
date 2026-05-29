@@ -5,13 +5,15 @@ namespace LeetCode.Tests.P00303RangeSumQueryImmutable;
 
 public sealed class SolutionTests
 {
-    [Fact]
-    public void SumRange_ReturnsExpectedSums()
+    [Theory]
+    [MemberData(nameof(SolutionTestCases.SumRangeCases), MemberType = typeof(SolutionTestCases))]
+    public void SumRange_ReturnsExpectedSums(int[] nums, int[][] ranges, int[] expected)
     {
-        NumArray numArray = new([-2, 0, 3, -5, 2, -1]);
+        NumArray numArray = new(nums);
 
-        Assert.Equal(1, numArray.SumRange(0, 2));
-        Assert.Equal(-1, numArray.SumRange(2, 5));
-        Assert.Equal(-3, numArray.SumRange(0, 5));
+        for (int i = 0; i < ranges.Length; i++)
+        {
+            Assert.Equal(expected[i], numArray.SumRange(ranges[i][0], ranges[i][1]));
+        }
     }
 }

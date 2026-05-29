@@ -6,10 +6,7 @@ namespace LeetCode.Tests.P00024SwapNodesInPairs;
 public sealed class SolutionTests
 {
     [Theory]
-    [InlineData(new[] { 1, 2, 3, 4 }, new[] { 2, 1, 4, 3 })]
-    [InlineData(new int[] { }, new int[] { })]
-    [InlineData(new[] { 1 }, new[] { 1 })]
-    [InlineData(new[] { 1, 2, 3 }, new[] { 2, 1, 3 })]
+    [MemberData(nameof(SolutionTestCases.SwapPairsCases), MemberType = typeof(SolutionTestCases))]
     public void SwapPairs_SwapsAdjacentNodes(int[] values, int[] expected)
     {
         Solution solution = new();

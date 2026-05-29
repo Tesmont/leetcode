@@ -5,17 +5,8 @@ namespace LeetCode.Tests.P00205IsomorphicStrings;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<string, string, bool> IsIsomorphicCases =>
-        new()
-        {
-            { "egg", "add", true },
-            { "foo", "bar", false },
-            { "paper", "title", true },
-            { "badc", "baba", false },
-        };
-
     [Theory]
-    [MemberData(nameof(IsIsomorphicCases))]
+    [MemberData(nameof(SolutionTestCases.IsIsomorphicCases), MemberType = typeof(SolutionTestCases))]
     public void IsIsomorphic_ReturnsWhetherStringsAreIsomorphic(string s, string t, bool expected)
     {
         Solution solution = new();

@@ -6,8 +6,7 @@ namespace LeetCode.Tests.P00876MiddleOfTheLinkedList;
 public sealed class SolutionTests
 {
     [Theory]
-    [InlineData(new[] { 1, 2, 3, 4, 5 }, 2)]
-    [InlineData(new[] { 1, 2, 3, 4, 5, 6 }, 3)]
+    [MemberData(nameof(SolutionTestCases.MiddleNodeCases), MemberType = typeof(SolutionTestCases))]
     public void MiddleNode_ReturnsMiddleNode(int[] values, int expectedIndex)
     {
         Solution solution = new();

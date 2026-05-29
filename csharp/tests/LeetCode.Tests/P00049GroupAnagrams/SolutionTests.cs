@@ -5,16 +5,8 @@ namespace LeetCode.Tests.P00049GroupAnagrams;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<string[], string[][]> GroupAnagramsCases =>
-        new()
-        {
-            { ["eat", "tea", "tan", "ate", "nat", "bat"], [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]] },
-            { [""], [[""]] },
-            { ["a"], [["a"]] },
-        };
-
     [Theory]
-    [MemberData(nameof(GroupAnagramsCases))]
+    [MemberData(nameof(SolutionTestCases.GroupAnagramsCases), MemberType = typeof(SolutionTestCases))]
     public void GroupAnagrams_ReturnsGroupedAnagrams(string[] strs, string[][] expected)
     {
         Solution solution = new();

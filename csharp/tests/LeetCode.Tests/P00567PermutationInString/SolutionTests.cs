@@ -6,12 +6,7 @@ namespace LeetCode.Tests.P00567PermutationInString;
 public sealed class SolutionTests
 {
     [Theory]
-    [InlineData("ab", "eidbaooo", true)]
-    [InlineData("ab", "eidboaoo", false)]
-    [InlineData("adc", "dcda", true)]
-    [InlineData("hello", "ooolleoooleh", false)]
-    [InlineData("a", "a", true)]
-    [InlineData("abc", "ab", false)]
+    [MemberData(nameof(SolutionTestCases.CheckInclusionCases), MemberType = typeof(SolutionTestCases))]
     public void CheckInclusion_ReturnsWhetherS2ContainsPermutationOfS1(
         string s1,
         string s2,

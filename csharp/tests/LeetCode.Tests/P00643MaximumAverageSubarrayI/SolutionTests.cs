@@ -5,15 +5,8 @@ namespace LeetCode.Tests.P00643MaximumAverageSubarrayI;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<int[], int, double> FindMaxAverageCases =>
-        new()
-        {
-            { [1, 12, -5, -6, 50, 3], 4, 12.75 },
-            { [5], 1, 5.0 },
-        };
-
     [Theory]
-    [MemberData(nameof(FindMaxAverageCases))]
+    [MemberData(nameof(SolutionTestCases.FindMaxAverageCases), MemberType = typeof(SolutionTestCases))]
     public void FindMaxAverage_ReturnsExpectedMaximumAverage(int[] nums, int k, double expected)
     {
         Solution solution = new();

@@ -5,17 +5,8 @@ namespace LeetCode.Tests.P00791CustomSortString;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<string, string> CustomSortStringCases =>
-        new()
-        {
-            { "cba", "abcd" },
-            { "bcafg", "abcd" },
-            { "kqep", "pekeq" },
-            { "abc", "aaabbbccc" },
-        };
-
     [Theory]
-    [MemberData(nameof(CustomSortStringCases))]
+    [MemberData(nameof(SolutionTestCases.CustomSortStringCases), MemberType = typeof(SolutionTestCases))]
     public void CustomSortString_ReturnsPermutationInCustomOrder(string order, string s)
     {
         Solution solution = new();

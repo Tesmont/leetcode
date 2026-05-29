@@ -1,0 +1,15 @@
+using Xunit;
+
+namespace LeetCode.Tests.P00977SquaresOfASortedArray;
+
+public static class SolutionTestCases
+{
+    public static TheoryData<int[], int[]> SortedSquaresCases =>
+        new()
+        {
+            { [-4, -1, 0, 3, 10], [0, 1, 9, 16, 100] },
+            { [-7, -3, 2, 3, 11], [4, 9, 9, 49, 121] },
+            { [-5, -3, -2, -1], [1, 4, 9, 25] },
+            { [0], [0] },
+        };
+}

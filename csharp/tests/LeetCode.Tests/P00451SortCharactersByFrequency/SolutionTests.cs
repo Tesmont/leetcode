@@ -5,18 +5,8 @@ namespace LeetCode.Tests.P00451SortCharactersByFrequency;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<string> FrequencySortCases =>
-        new()
-        {
-            "tree",
-            "cccaaa",
-            "Aabb",
-            "raaeaedere",
-            "a",
-        };
-
     [Theory]
-    [MemberData(nameof(FrequencySortCases))]
+    [MemberData(nameof(SolutionTestCases.FrequencySortCases), MemberType = typeof(SolutionTestCases))]
     public void FrequencySort_ReturnsCharactersSortedByDescendingFrequency(string s)
     {
         Solution solution = new();

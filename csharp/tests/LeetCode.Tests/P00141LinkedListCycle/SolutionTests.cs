@@ -6,10 +6,7 @@ namespace LeetCode.Tests.P00141LinkedListCycle;
 public sealed class SolutionTests
 {
     [Theory]
-    [InlineData(new[] { 3, 2, 0, -4 }, 1, true)]
-    [InlineData(new[] { 1, 2 }, 0, true)]
-    [InlineData(new[] { 1 }, -1, false)]
-    [InlineData(new int[] { }, -1, false)]
+    [MemberData(nameof(SolutionTestCases.HasCycleCases), MemberType = typeof(SolutionTestCases))]
     public void HasCycle_ReturnsWhetherLinkedListHasCycle(int[] values, int pos, bool expected)
     {
         Solution solution = new();

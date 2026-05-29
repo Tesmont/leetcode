@@ -5,17 +5,8 @@ namespace LeetCode.Tests.P00383RansomNote;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<string, string, bool> CanConstructCases =>
-        new()
-        {
-            { "a", "b", false },
-            { "aa", "ab", false },
-            { "aa", "aab", true },
-            { new string('a', 40_000), new string('a', 40_000), true },
-        };
-
     [Theory]
-    [MemberData(nameof(CanConstructCases))]
+    [MemberData(nameof(SolutionTestCases.CanConstructCases), MemberType = typeof(SolutionTestCases))]
     public void CanConstruct_ReturnsWhetherRansomNoteCanBeConstructed(
         string ransomNote,
         string magazine,

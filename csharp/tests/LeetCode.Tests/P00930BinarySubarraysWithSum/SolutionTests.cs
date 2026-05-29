@@ -5,17 +5,8 @@ namespace LeetCode.Tests.P00930BinarySubarraysWithSum;
 
 public sealed class SolutionTests
 {
-    public static TheoryData<int[], int, int> NumSubarraysWithSumCases =>
-        new()
-        {
-            { [1, 0, 1, 0, 1], 2, 4 },
-            { [0, 0, 0, 0, 0], 0, 15 },
-            { [1], 1, 1 },
-            { [0], 1, 0 },
-        };
-
     [Theory]
-    [MemberData(nameof(NumSubarraysWithSumCases))]
+    [MemberData(nameof(SolutionTestCases.NumSubarraysWithSumCases), MemberType = typeof(SolutionTestCases))]
     public void NumSubarraysWithSum_ReturnsCountOfBinarySubarraysWithTargetSum(
         int[] nums,
         int goal,
