@@ -8,31 +8,24 @@ public sealed class Solution
 {
     public ListNode SwapNodes(ListNode head, int k)
     {
-        ListNode? currentNode = head;
-        ListNode? kthFromStart = null;
-        ListNode? kthFromEnd = null;
-
-        int length = 0;
-        while (currentNode != null)
+        ListNode nodeFromStart = head;
+        for (int i = 1; i < k; i++)
         {
-            length++;
-
-            if (length == k)
-            {
-                kthFromStart = currentNode;
-                kthFromEnd = head;
-            }
-            else
-            {
-                kthFromEnd = kthFromEnd?.next;
-            }
-
-            currentNode = currentNode.next;
+            nodeFromStart = nodeFromStart.next!;
         }
 
-        int temp = kthFromStart!.val;
-        kthFromStart.val = kthFromEnd!.val;
-        kthFromEnd.val = temp;
+        ListNode nodeFromEnd = head;
+        ListNode? currentNode = nodeFromStart.next;
+
+        while (currentNode != null)
+        {
+            currentNode = currentNode.next;
+            nodeFromEnd = nodeFromEnd.next!;
+        }
+
+        int tempVal = nodeFromStart.val;
+        nodeFromStart.val = nodeFromEnd.val;
+        nodeFromEnd.val = tempVal;
 
         return head;
     }

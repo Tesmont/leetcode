@@ -18,6 +18,7 @@ The AI may:
 
 - create a problem directory
 - create Solution.cs
+- create SolutionTestCases.cs
 - create SolutionTests.cs
 - copy examples from the problem statement into tests
 - add small helper methods in tests if needed
@@ -69,7 +70,8 @@ Rules:
 - one problem = one directory
 - main implementation in root Solution.cs
 - alternatives in subdirectories
-- tests mirror source structure
+- tests mirror source structure for `SolutionTests.cs`
+- each problem has exactly one `SolutionTestCases.cs` in the root test directory
 
 ## Naming
 
@@ -241,13 +243,16 @@ Tests:
 - may include additional test cases at the AI's discretion when they improve confidence or coverage
 - must keep test cases in `SolutionTestCases.cs`
 - must keep test methods in `SolutionTests.cs`
+- must create exactly one `SolutionTestCases.cs` per problem, even when there is only one solution
+- must share the root problem `SolutionTestCases.cs` across the main solution and all alternative implementations
+- must not create `SolutionTestCases.cs` inside alternative implementation test subdirectories
 - must not be empty or commented
 - must not implement or duplicate the solution algorithm
 - must not make tests pass by changing solution boilerplate
 
 It is expected that tests fail with `System.NotImplementedException` for newly generated boilerplate.
 
-Every problem test directory must contain:
+Every root problem test directory must contain:
 
 - `SolutionTestCases.cs` for shared test case data
 - `SolutionTests.cs` for the main approach test methods
@@ -256,8 +261,9 @@ When a problem has more than one implementation approach:
 
 - create one test class for the main approach
 - create one test class in a mirrored subdirectory for each alternative approach
-- each approach test class must use the same shared test cases
+- each approach test class must use the same shared test cases from the root problem `SolutionTestCases.cs`
 - each approach test class must instantiate only its own Solution class
+- alternative approach test subdirectories must contain `SolutionTests.cs` only unless explicitly requested otherwise
 - do not use interfaces, dependency injection, reflection, or abstract test frameworks unless explicitly requested
 
 Example:
