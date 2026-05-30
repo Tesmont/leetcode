@@ -8,53 +8,34 @@ public sealed class Solution
 {
     public bool IsPalindrome(ListNode head)
     {
-        ListNode middleNode = GetMiddleNode(head);
-        ListNode? reversedNode = Reverse(middleNode);
-
-        return StartsWithSameValues(head, reversedNode);
-    }
-
-    private static ListNode GetMiddleNode(ListNode head)
-    {
-        ListNode slow = head;
         ListNode? fast = head;
+        ListNode? secondHalf = head;
+        ListNode? reversedFirstHalf = null;
 
         while (fast?.next != null)
         {
-            slow = slow.next!;
             fast = fast.next.next;
+
+            ListNode next = secondHalf.next!;
+            secondHalf.next = reversedFirstHalf;
+            reversedFirstHalf = secondHalf;
+            secondHalf = next;
         }
 
-        return slow;
-    }
-
-    private static ListNode? Reverse(ListNode head)
-    {
-        ListNode? previous = null;
-        ListNode? current = head;
-
-        while (current != null)
+        if (fast != null)
         {
-            ListNode? next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
+            secondHalf = secondHalf.next;
         }
 
-        return previous;
-    }
-
-    private static bool StartsWithSameValues(ListNode head, ListNode? reveresed)
-    {
-        while (reveresed != null)
+        while (secondHalf != null)
         {
-            if (head.val != reveresed.val)
+            if (secondHalf.val != reversedFirstHalf!.val)
             {
                 return false;
             }
 
-            head = head.next!;
-            reveresed = reveresed.next;
+            secondHalf = secondHalf.next;
+            reversedFirstHalf = reversedFirstHalf.next;
         }
 
         return true;
