@@ -14,8 +14,8 @@ public sealed class Solution
         while (previousGroupTail.next != null)
         {
             (ListNode groupTail, int actualLength) = GetGroupTail(previousGroupTail.next, groupLength);
-            previousGroupTail = actualLength % 2 == 0 
-                ? ReverseGroup(previousGroupTail, actualLength) 
+            previousGroupTail = actualLength % 2 == 0
+                ? ReverseGroup(previousGroupTail, actualLength)
                 : groupTail;
 
             groupLength++;
