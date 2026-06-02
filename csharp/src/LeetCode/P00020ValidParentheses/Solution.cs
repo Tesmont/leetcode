@@ -8,34 +8,37 @@ public sealed class Solution
 {
     public bool IsValid(string s)
     {
+        if (s.Length % 2 != 0)
+        {
+            return false;
+        }
+
         const int asciiLength = 128;
-        Span<char> map = stackalloc char[asciiLength];
-        map[')'] = '(';
-        map[']'] = '[';
-        map['}'] = '{';
+        Span<char> openingByClosing = stackalloc char[asciiLength];
+        openingByClosing[')'] = '(';
+        openingByClosing[']'] = '[';
+        openingByClosing['}'] = '{';
 
         Span<char> stack = stackalloc char[s.Length];
-        int count = 0;
+        int stackSize = 0;
 
         foreach (char ch in s)
         {
-            char mappedCh = map[ch];
+            char expectedOpening = openingByClosing[ch];
 
-            if (mappedCh == 0)
+            if (expectedOpening == 0)
             {
-                stack[count] = ch;
-                count++;
+                stack[stackSize++] = ch;
                 continue;
             }
 
-            count--;
-            if (count < 0
-                || stack[count] != mappedCh)
+            if (stackSize == 0
+                || stack[--stackSize] != expectedOpening)
             {
                 return false;
             }
         }
 
-        return count == 0;
+        return stackSize == 0;
     }
 }
