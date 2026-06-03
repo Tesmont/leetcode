@@ -8,31 +8,26 @@ public sealed class Solution
 {
     public string MakeGood(string s)
     {
-        const int shift = 'a' - 'A';
+        const int difference = 'a' - 'A';
         Span<char> stack = stackalloc char[s.Length];
         int stackCount = 0;
 
         foreach (char ch in s)
         {
-            if (stackCount == 0)
+            if (stackCount > 0)
             {
-                stack[stackCount] = ch;
-                stackCount++;
-                continue;
-            }
-
-            char lastCh = stack[stackCount - 1];
-            if (ch - shift == lastCh
-                || ch + shift == lastCh)
-            {
-                stackCount--;
-                continue;
+                char lastCh = stack[stackCount - 1];
+                if (Math.Abs(lastCh - ch) == difference)
+                {
+                    stackCount--;
+                    continue;
+                }
             }
 
             stack[stackCount] = ch;
             stackCount++;
         }
-        
+
         return new string(stack[..stackCount]);
     }
 }
