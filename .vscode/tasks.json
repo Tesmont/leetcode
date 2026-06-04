@@ -96,6 +96,40 @@
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "refactor: rename current approach",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "scripts/rename-current-approach.sh",
+                "${relativeFileDirname}",
+                "${input:newApproachName}"
+            ],
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-NoProfile",
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-File",
+                    "scripts/rename-current-approach.ps1",
+                    "${relativeFileDirname}",
+                    "${input:newApproachName}"
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "scripts/rename-current-approach.sh",
+                    "${relativeFileDirname}",
+                    "${input:newApproachName}"
+                ]
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile"
         }
     ],
     "inputs": [
@@ -104,6 +138,12 @@
             "type": "promptString",
             "description": "Problem/test filter, e.g. P00001",
             "default": "P00001"
+        },
+        {
+            "id": "newApproachName",
+            "type": "promptString",
+            "description": "New approach name, e.g. TwoPointers",
+            "default": "TwoPointers"
         }
     ]
 }
