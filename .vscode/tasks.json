@@ -130,6 +130,40 @@
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "boilerplate: add approach to current problem",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "scripts/add-current-problem-approach.sh",
+                "${relativeFileDirname}",
+                "${input:newBoilerplateApproachName}"
+            ],
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-NoProfile",
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-File",
+                    "scripts/add-current-problem-approach.ps1",
+                    "${relativeFileDirname}",
+                    "${input:newBoilerplateApproachName}"
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "scripts/add-current-problem-approach.sh",
+                    "${relativeFileDirname}",
+                    "${input:newBoilerplateApproachName}"
+                ]
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$msCompile"
         }
     ],
     "inputs": [
@@ -144,6 +178,12 @@
             "type": "promptString",
             "description": "New approach name, e.g. TwoPointers",
             "default": "TwoPointers"
+        },
+        {
+            "id": "newBoilerplateApproachName",
+            "type": "promptString",
+            "description": "New boilerplate approach name, e.g. Initial, BruteForce, DynamicProgramming",
+            "default": "Initial"
         }
     ]
 }

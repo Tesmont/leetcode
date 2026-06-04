@@ -11,3 +11,4 @@ MonotonicStack
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
 | MonotonicStack | O(n) | O(n) | Preferred |
+| Initial | Unknown | Unknown | Reference |
