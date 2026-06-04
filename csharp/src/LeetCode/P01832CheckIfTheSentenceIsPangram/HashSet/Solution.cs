@@ -1,0 +1,30 @@
+namespace LeetCode.P01832CheckIfTheSentenceIsPangram.HashSet;
+
+/// <summary>
+/// LeetCode 1832. Check if the Sentence Is Pangram.
+/// https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+/// </summary>
+public sealed class Solution
+{
+    public bool CheckIfPangram(string sentence)
+    {
+        const int lowercaseLetterSlots = 'z' + 1;
+
+        Span<byte> seen = stackalloc byte[lowercaseLetterSlots];
+
+        foreach (char letter in sentence)
+        {
+            seen[letter] = 1;
+        }
+
+        int seenLettersCount = 0;
+        for (int i = 'a'; i <= 'z'; i++)
+        {
+            seenLettersCount += seen[i];
+        }
+
+        const int alphabetLength = 'z' - 'a' + 1;
+
+        return seenLettersCount == alphabetLength;
+    }
+}

@@ -1,8 +1,8 @@
 namespace LeetCode.P02130MaximumTwinSumOfALinkedList.ReverseSecondHalf;
 
 /// <summary>
-/// LeetCode #2130 - Maximum Twin Sum of a Linked List.
-/// Problem: https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
+/// LeetCode 2130. Maximum Twin Sum of a Linked List.
+/// https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
 /// </summary>
 public sealed class Solution
 {

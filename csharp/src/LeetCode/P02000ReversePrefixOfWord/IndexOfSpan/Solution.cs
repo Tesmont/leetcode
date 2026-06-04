@@ -1,8 +1,8 @@
 namespace LeetCode.P02000ReversePrefixOfWord.IndexOfSpan;
 
 /// <summary>
-/// LeetCode #2000 - Reverse Prefix of Word.
-/// Problem: https://leetcode.com/problems/reverse-prefix-of-word/
+/// LeetCode 2000. Reverse Prefix of Word.
+/// https://leetcode.com/problems/reverse-prefix-of-word/
 /// </summary>
 public sealed class Solution
 {

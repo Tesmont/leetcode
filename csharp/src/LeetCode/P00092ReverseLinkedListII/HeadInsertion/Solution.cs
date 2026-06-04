@@ -1,8 +1,8 @@
 namespace LeetCode.P00092ReverseLinkedListII.HeadInsertion;
 
 /// <summary>
-/// LeetCode #92 - Reverse Linked List II.
-/// Problem: https://leetcode.com/problems/reverse-linked-list-ii/
+/// LeetCode 92. Reverse Linked List II.
+/// https://leetcode.com/problems/reverse-linked-list-ii/
 /// </summary>
 public sealed class Solution
 {

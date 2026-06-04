@@ -1,8 +1,8 @@
 namespace LeetCode.P00844BackspaceStringCompare.Stack;
 
 /// <summary>
-/// LeetCode #844 - Backspace String Compare.
-/// Problem: https://leetcode.com/problems/backspace-string-compare/
+/// LeetCode 844. Backspace String Compare.
+/// https://leetcode.com/problems/backspace-string-compare/
 /// </summary>
 public sealed class Solution
 {

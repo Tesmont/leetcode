@@ -1,8 +1,8 @@
 namespace LeetCode.P00209MinimumSizeSubarraySum.BinarySearch;
 
 /// <summary>
-/// LeetCode #209 - Minimum Size Subarray Sum.
-/// Problem: https://leetcode.com/problems/minimum-size-subarray-sum/
+/// LeetCode 209. Minimum Size Subarray Sum.
+/// https://leetcode.com/problems/minimum-size-subarray-sum/
 /// </summary>
 public sealed class Solution
 {

@@ -1,8 +1,8 @@
 namespace LeetCode.P01004MaxConsecutiveOnesIII.SlidingWindow;
 
 /// <summary>
-/// LeetCode #1004 - Max Consecutive Ones III.
-/// Problem: https://leetcode.com/problems/max-consecutive-ones-iii/
+/// LeetCode 1004. Max Consecutive Ones III.
+/// https://leetcode.com/problems/max-consecutive-ones-iii/
 /// </summary>
 public sealed class Solution
 {

@@ -1,8 +1,8 @@
 namespace LeetCode.P00234PalindromeLinkedList.ThreePasses;
 
 /// <summary>
-/// LeetCode #234 - Palindrome Linked List.
-/// Problem: https://leetcode.com/problems/palindrome-linked-list/
+/// LeetCode 234. Palindrome Linked List.
+/// https://leetcode.com/problems/palindrome-linked-list/
 /// </summary>
 public sealed class Solution
 {

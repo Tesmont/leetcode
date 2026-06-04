@@ -1,4 +1,3 @@
-using LeetCode.P00082RemoveDuplicatesFromSortedListII;
 using Xunit;
 
 namespace LeetCode.Tests.P00082RemoveDuplicatesFromSortedListII;
@@ -14,30 +13,4 @@ public static class SolutionTestCases
             { [1, 1], [] },
             { [1, 2, 2], [1] },
         };
-
-    public static ListNode? BuildList(int[] values)
-    {
-        ListNode? head = null;
-
-        for (int i = values.Length - 1; i >= 0; i--)
-        {
-            head = new ListNode(values[i], head);
-        }
-
-        return head;
-    }
-
-    public static int[] ToArray(ListNode? head)
-    {
-        List<int> values = [];
-        ListNode? current = head;
-
-        while (current != null)
-        {
-            values.Add(current.val);
-            current = current.next;
-        }
-
-        return [.. values];
-    }
 }

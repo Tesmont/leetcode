@@ -1,8 +1,8 @@
 namespace LeetCode.P00071SimplifyPath.Stack;
 
 /// <summary>
-/// LeetCode #71 - Simplify Path.
-/// Problem: https://leetcode.com/problems/simplify-path/
+/// LeetCode 71. Simplify Path.
+/// https://leetcode.com/problems/simplify-path/
 /// </summary>
 public sealed class Solution
 {

@@ -1,8 +1,8 @@
 namespace LeetCode.P00713SubarrayProductLessThanK.BinarySearch;
 
 /// <summary>
-/// LeetCode #713 - Subarray Product Less Than K.
-/// Problem: https://leetcode.com/problems/subarray-product-less-than-k/
+/// LeetCode 713. Subarray Product Less Than K.
+/// https://leetcode.com/problems/subarray-product-less-than-k/
 /// </summary>
 public sealed class Solution
 {

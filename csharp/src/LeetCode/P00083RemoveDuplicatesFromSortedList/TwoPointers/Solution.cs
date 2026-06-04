@@ -1,8 +1,8 @@
 namespace LeetCode.P00083RemoveDuplicatesFromSortedList.TwoPointers;
 
 /// <summary>
-/// LeetCode #83 - Remove Duplicates from Sorted List.
-/// Problem: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+/// LeetCode 83. Remove Duplicates from Sorted List.
+/// https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 /// </summary>
 public sealed class Solution
 {
@@ -22,5 +22,17 @@ public sealed class Solution
         }
 
         return head;
+    }
+}
+
+public sealed class ListNode
+{
+    public int val;
+    public ListNode? next;
+
+    public ListNode(int val = 0, ListNode? next = null)
+    {
+        this.val = val;
+        this.next = next;
     }
 }

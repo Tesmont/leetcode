@@ -1,8 +1,8 @@
 namespace LeetCode.P00167TwoSumIIInputArrayIsSorted.BinarySearch;
 
 /// <summary>
-/// LeetCode #167 - Two Sum II - Input Array Is Sorted.
-/// Problem: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+/// LeetCode 167. Two Sum II - Input Array Is Sorted.
+/// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 /// </summary>
 public sealed class Solution
 {

@@ -1,8 +1,8 @@
 namespace LeetCode.P02351FirstLetterToAppearTwice.Array;
 
 /// <summary>
-/// LeetCode #2351 - First Letter to Appear Twice.
-/// Problem: https://leetcode.com/problems/first-letter-to-appear-twice/
+/// LeetCode 2351. First Letter to Appear Twice.
+/// https://leetcode.com/problems/first-letter-to-appear-twice/
 /// </summary>
 public sealed class Solution
 {
