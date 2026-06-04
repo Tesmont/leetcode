@@ -1,8 +1,8 @@
-using LeetCode.P00739DailyTemperatures.Initial;
+using LeetCode.P00739DailyTemperatures.Jumping;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00739DailyTemperatures.SolutionTestCases;
 
-namespace LeetCode.Tests.P00739DailyTemperatures.Initial;
+namespace LeetCode.Tests.P00739DailyTemperatures.Jumping;
 
 public sealed class SolutionTests
 {
