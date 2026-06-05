@@ -1,4 +1,4 @@
-using LeetCode.P00239SlidingWindowMaximum.Initial;
+using LeetCode.P00239SlidingWindowMaximum.MonotonicFunction;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00239SlidingWindowMaximum.SolutionTestCases;
 

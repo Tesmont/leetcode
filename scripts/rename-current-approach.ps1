@@ -138,6 +138,12 @@ Replace-TextInFiles `
     -NewText $newTestNamespace `
     -Patterns @("*.cs")
 
+Replace-TextInFiles `
+    -Directory $newTestApproachDirectory `
+    -OldText $oldSourceNamespace `
+    -NewText $newSourceNamespace `
+    -Patterns @("*.cs")
+
 if (Test-Path -LiteralPath $readmePath) {
     $readmeContent = Get-Content -LiteralPath $readmePath -Raw
 

@@ -1,4 +1,4 @@
-using LeetCode.P00011ContainerWithMostWater.Initial;
+using LeetCode.P00011ContainerWithMostWater.TwoPointers;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00011ContainerWithMostWater.SolutionTestCases;
 

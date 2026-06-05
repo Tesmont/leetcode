@@ -118,6 +118,7 @@ new_test_namespace="LeetCode.Tests.$problem_name.$new_approach_name"
 
 replace_text_in_files "$new_source_approach_directory" "$old_source_namespace" "$new_source_namespace"
 replace_text_in_files "$new_test_approach_directory" "$old_test_namespace" "$new_test_namespace"
+replace_text_in_files "$new_test_approach_directory" "$old_source_namespace" "$new_source_namespace"
 
 if [[ -f "$readme_path" ]]; then
     python3 - "$readme_path" "$old_approach_name" "$new_approach_name" <<'PY'

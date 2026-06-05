@@ -6,4 +6,4 @@ https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-les
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | Unknown | Unknown | Boilerplate |
+| MonotonicQueue | O(n) | O(n) | Implemented |

@@ -1,8 +1,8 @@
-using LeetCode.P01438LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.Initial;
+using LeetCode.P01438LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.MonotonicQueue;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P01438LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.SolutionTestCases;
 
-namespace LeetCode.Tests.P01438LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.Initial;
+namespace LeetCode.Tests.P01438LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.MonotonicQueue;
 
 public sealed class SolutionTests
 {
