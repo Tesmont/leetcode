@@ -1,4 +1,4 @@
-namespace LeetCode.P00011ContainerWithMostWater.Initial;
+namespace LeetCode.P00011ContainerWithMostWater.TwoPointers;
 
 /// <summary>
 /// LeetCode 11. Container With Most Water.

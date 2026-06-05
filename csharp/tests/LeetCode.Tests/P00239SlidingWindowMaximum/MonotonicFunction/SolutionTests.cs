@@ -2,7 +2,7 @@ using LeetCode.P00239SlidingWindowMaximum.Initial;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00239SlidingWindowMaximum.SolutionTestCases;
 
-namespace LeetCode.Tests.P00239SlidingWindowMaximum.Initial;
+namespace LeetCode.Tests.P00239SlidingWindowMaximum.MonotonicFunction;
 
 public sealed class SolutionTests
 {

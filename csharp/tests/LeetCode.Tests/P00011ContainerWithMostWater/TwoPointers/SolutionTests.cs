@@ -2,7 +2,7 @@ using LeetCode.P00011ContainerWithMostWater.Initial;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00011ContainerWithMostWater.SolutionTestCases;
 
-namespace LeetCode.Tests.P00011ContainerWithMostWater.Initial;
+namespace LeetCode.Tests.P00011ContainerWithMostWater.TwoPointers;
 
 public sealed class SolutionTests
 {

@@ -6,4 +6,4 @@ https://leetcode.com/problems/sliding-window-maximum/
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | Unknown | Unknown | Boilerplate |
+| MonotonicFunction | Unknown | Unknown | Boilerplate |
