@@ -10,28 +10,21 @@ public sealed class Solution
     {
         const char star = '*';
 
-        Span<char> buffer = stackalloc char[s.Length];
-        int bufferIndex = buffer.Length - 1;
-        int starCount = 0;
+        Span<char> stack = stackalloc char[s.Length];
+        int count = 0;
 
-        for (int i = s.Length - 1; i >= 0; i--)
+        foreach (char ch in s)
         {
-            if (s[i] == star)
+            if (ch == star)
             {
-                starCount++;
+                count--;
                 continue;
             }
 
-            if (starCount > 0)
-            {
-                starCount--;
-                continue;
-            }
-
-            buffer[bufferIndex] = s[i];
-            bufferIndex--;
+            stack[count] = ch;
+            count++;
         }
 
-        return new string(buffer[(bufferIndex + 1)..]);
+        return new string(stack[..count]);
     }
 }
