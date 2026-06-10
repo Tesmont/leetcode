@@ -12,5 +12,6 @@ public static class SolutionTestCases
             { [1], [1], true },
             { [1, 2], [2, 1], true },
             { [1, 2], [1, 2], true },
+            { [2, 3, 0, 1], [0, 3, 2, 1], true }
         };
 }

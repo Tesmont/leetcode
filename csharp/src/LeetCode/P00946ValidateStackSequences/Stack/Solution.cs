@@ -8,30 +8,21 @@ public sealed class Solution
 {
     public bool ValidateStackSequences(int[] pushed, int[] popped)
     {
-        Stack<int> pushedStack = new(pushed.Length);
+        Stack<int> stack = new(pushed.Length);
         int poppedIndex = 0;
 
-        foreach(int value in pushed)
+        foreach (int value in pushed)
         {
-            if(value == popped[poppedIndex])
+            stack.Push(value);
+
+            while (stack.TryPeek(out int top) 
+                && top == popped[poppedIndex])
             {
+                stack.Pop();
                 poppedIndex++;
-                continue;
             }
-
-            pushedStack.Push(value);
         }
 
-        while(pushedStack.TryPop(out int value))
-        {
-            if(value == popped[poppedIndex])
-            {
-                return false;
-            }
-
-            poppedIndex++;
-        }
-        
-        return true;
+        return stack.Count == 0;
     }
 }
