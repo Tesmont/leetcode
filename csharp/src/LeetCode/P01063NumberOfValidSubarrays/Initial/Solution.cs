@@ -8,22 +8,23 @@ public sealed class Solution
 {
     public int ValidSubarrays(int[] nums)
     {
+        Span<int> stack = stackalloc int[nums.Length];
         int stackCount = 0;
-        int validSubarrayCount = 0;
+        int subArrayCount = 0;
 
         foreach (int num in nums)
         {
-            while (stackCount > 0 && nums[stackCount - 1] > num)
+            while (stackCount > 0 && stack[stackCount - 1] > num)
             {
                 stackCount--;
             }
 
-            nums[stackCount] = num;
+            stack[stackCount] = num;
             stackCount++;
 
-            validSubarrayCount += stackCount;
+            subArrayCount += stackCount;
         }
 
-        return validSubarrayCount;
+        return subArrayCount;
     }
 }
