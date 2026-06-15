@@ -1,8 +1,8 @@
-using LeetCode.P00907SumOfSubarrayMinimums.Initial;
+using LeetCode.P00907SumOfSubarrayMinimums.ThreePasses;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00907SumOfSubarrayMinimums.SolutionTestCases;
 
-namespace LeetCode.Tests.P00907SumOfSubarrayMinimums.Initial;
+namespace LeetCode.Tests.P00907SumOfSubarrayMinimums.ThreePasses;
 
 public sealed class SolutionTests
 {

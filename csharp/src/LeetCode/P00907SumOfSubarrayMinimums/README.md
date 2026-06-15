@@ -4,10 +4,11 @@ https://leetcode.com/problems/sum-of-subarray-minimums/
 
 ## Preferred implementation
 
-Initial
+ThreePasses
 
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | Unknown | Unknown | Preferred |
+| ThreePasses | O(n) | O(n) | Preferred |
+| OnePass | O(n) | O(n) | Alternative |

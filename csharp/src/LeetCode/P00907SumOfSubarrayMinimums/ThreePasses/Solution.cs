@@ -1,4 +1,4 @@
-namespace LeetCode.P00907SumOfSubarrayMinimums.Initial;
+namespace LeetCode.P00907SumOfSubarrayMinimums.ThreePasses;
 
 /// <summary>
 /// LeetCode 907. Sum of Subarray Minimums.
