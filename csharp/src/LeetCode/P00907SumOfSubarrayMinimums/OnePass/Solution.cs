@@ -19,7 +19,7 @@ public class Solution
                 ? int.MinValue
                 : arr[i];
 
-            while (stackCount > 0 
+            while (stackCount > 0
                 && arr[stack[stackCount - 1]] >= current)
             {
                 stackCount--;
