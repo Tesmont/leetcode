@@ -1,8 +1,8 @@
-using LeetCode.P01026MaximumDifferenceBetweenNodeAndAncestor.Initial;
+using LeetCode.P01026MaximumDifferenceBetweenNodeAndAncestor.DFS;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P01026MaximumDifferenceBetweenNodeAndAncestor.SolutionTestCases;
 
-namespace LeetCode.Tests.P01026MaximumDifferenceBetweenNodeAndAncestor.Initial;
+namespace LeetCode.Tests.P01026MaximumDifferenceBetweenNodeAndAncestor.DFS;
 
 public sealed class SolutionTests
 {

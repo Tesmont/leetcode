@@ -4,10 +4,11 @@ https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
 
 ## Preferred implementation
 
-Initial
+DFS
 
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | O(n) | O(h) | Preferred |
+| DFS | O(n) | O(h) | Preferred |
+| Stack | O(n) | O(h) | Reference |

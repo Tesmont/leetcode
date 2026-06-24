@@ -1,4 +1,4 @@
-namespace LeetCode.P01026MaximumDifferenceBetweenNodeAndAncestor.Initial;
+namespace LeetCode.P01026MaximumDifferenceBetweenNodeAndAncestor.DFS;
 
 /// <summary>
 /// LeetCode 1026. Maximum Difference Between Node and Ancestor.
