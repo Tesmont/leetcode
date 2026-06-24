@@ -15,7 +15,7 @@ public sealed class Solution
         {
             stack.Push(value);
 
-            while (stack.TryPeek(out int top) 
+            while (stack.TryPeek(out int top)
                 && top == popped[poppedIndex])
             {
                 stack.Pop();

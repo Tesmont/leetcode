@@ -13,7 +13,7 @@ public sealed class Solution
 
         for (int i = 0; i < nums.Length; i++)
         {
-            if (deque.Count > 0 
+            if (deque.Count > 0
                 && deque.First!.Value == i - k)
             {
                 deque.RemoveFirst();

@@ -16,7 +16,7 @@ public sealed class Solution
         {
             int height = heights[i];
 
-            while (visibleBlockersCount > 0 
+            while (visibleBlockersCount > 0
                 && decreasingHeights[visibleBlockersCount - 1] < height)
             {
                 result[i]++;

@@ -14,8 +14,8 @@ public sealed class Solution
 
         foreach (int num in nums)
         {
-            while (count > 0 
-                && remainingRemovals > 0 
+            while (count > 0
+                && remainingRemovals > 0
                 && stack[count - 1] > num)
             {
                 count--;

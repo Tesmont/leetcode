@@ -22,8 +22,8 @@ public class Solution
                 stack.Pop();
             }
 
-            prevLess[i] = stack.Count == 0 
-                ? -1 
+            prevLess[i] = stack.Count == 0
+                ? -1
                 : stack.Peek();
             stack.Push(i);
         }
@@ -37,8 +37,8 @@ public class Solution
                 stack.Pop();
             }
 
-            nextLessOrEqual[i] = stack.Count == 0 
-                ? arr.Length 
+            nextLessOrEqual[i] = stack.Count == 0
+                ? arr.Length
                 : stack.Peek();
             stack.Push(i);
         }

@@ -16,7 +16,7 @@ public sealed class Solution
 
         for (int i = nums2.Length - 1; i >= 0; i--)
         {
-            while (stackIndex >= 0 
+            while (stackIndex >= 0
                 && stack[stackIndex] <= nums2[i])
             {
                 stackIndex--;
