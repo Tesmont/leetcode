@@ -1,189 +1,148 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "test: problem filter",
-            "type": "process",
-            "command": "dotnet",
-            "args": [
-                "test",
-                "csharp/LeetCode.slnx",
-                "--filter",
-                "FullyQualifiedName~${input:problemFilter}"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "group": "test",
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "test: current problem",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "scripts/test-current-problem.sh",
-                "${relativeFileDirname}"
-            ],
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-NoProfile",
-                    "-ExecutionPolicy",
-                    "Bypass",
-                    "-File",
-                    "scripts/test-current-problem.ps1",
-                    "${relativeFileDirname}"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "scripts/test-current-problem.sh",
-                    "${relativeFileDirname}"
-                ]
-            },
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "format: dotnet",
-            "type": "process",
-            "command": "dotnet",
-            "args": [
-                "format",
-                "csharp/LeetCode.slnx"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "group": "build",
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "git: add commit push",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "scripts/git-commit-push-summary.sh",
-                "${file}"
-            ],
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-NoProfile",
-                    "-ExecutionPolicy",
-                    "Bypass",
-                    "-File",
-                    "scripts/git-commit-push-summary.ps1",
-                    "${file}"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "scripts/git-commit-push-summary.sh",
-                    "${file}"
-                ]
-            },
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "refactor: rename current approach",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "scripts/rename-current-approach.sh",
-                "${relativeFileDirname}",
-                "${input:newApproachName}"
-            ],
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-NoProfile",
-                    "-ExecutionPolicy",
-                    "Bypass",
-                    "-File",
-                    "scripts/rename-current-approach.ps1",
-                    "${relativeFileDirname}",
-                    "${input:newApproachName}"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "scripts/rename-current-approach.sh",
-                    "${relativeFileDirname}",
-                    "${input:newApproachName}"
-                ]
-            },
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "boilerplate: add approach to current problem",
-            "type": "shell",
-            "command": "bash",
-            "args": [
-                "scripts/add-current-problem-approach.sh",
-                "${relativeFileDirname}",
-                "${input:newBoilerplateApproachName}"
-            ],
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-NoProfile",
-                    "-ExecutionPolicy",
-                    "Bypass",
-                    "-File",
-                    "scripts/add-current-problem-approach.ps1",
-                    "${relativeFileDirname}",
-                    "${input:newBoilerplateApproachName}"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "scripts/add-current-problem-approach.sh",
-                    "${relativeFileDirname}",
-                    "${input:newBoilerplateApproachName}"
-                ]
-            },
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": "$msCompile"
-        }
-    ],
-    "inputs": [
-        {
-            "id": "problemFilter",
-            "type": "promptString",
-            "description": "Problem/test filter, e.g. P00001",
-            "default": "P00001"
-        },
-        {
-            "id": "newApproachName",
-            "type": "promptString",
-            "description": "New approach name, e.g. TwoPointers",
-            "default": "TwoPointers"
-        },
-        {
-            "id": "newBoilerplateApproachName",
-            "type": "promptString",
-            "description": "New boilerplate approach name, e.g. Initial, BruteForce, DynamicProgramming",
-            "default": "Initial"
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "test: problem filter",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "test",
+        "csharp/LeetCode.slnx",
+        "--filter",
+        "FullyQualifiedName~${input:problemFilter}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "test: current problem",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/test-current-problem.sh",
+        "${relativeFileDirname}"
+      ],
+      "windows": {
+        "command": "powershell",
+        "args": [
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/test-current-problem.ps1",
+          "${relativeFileDirname}"
+        ]
+      },
+      "linux": {
+        "command": "bash",
+        "args": [
+          "scripts/test-current-problem.sh",
+          "${relativeFileDirname}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "format: dotnet",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "format",
+        "csharp/LeetCode.slnx"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "git: add commit push",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/git-commit-push-summary.sh",
+        "${file}"
+      ],
+      "windows": {
+        "command": "powershell",
+        "args": [
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/git-commit-push-summary.ps1",
+          "${file}"
+        ]
+      },
+      "linux": {
+        "command": "bash",
+        "args": [
+          "scripts/git-commit-push-summary.sh",
+          "${file}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "boilerplate: add approach to current problem",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/add-current-problem-approach.sh",
+        "${relativeFileDirname}",
+        "${input:newBoilerplateApproachName}"
+      ],
+      "windows": {
+        "command": "powershell",
+        "args": [
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/add-current-problem-approach.ps1",
+          "${relativeFileDirname}",
+          "${input:newBoilerplateApproachName}"
+        ]
+      },
+      "linux": {
+        "command": "bash",
+        "args": [
+          "scripts/add-current-problem-approach.sh",
+          "${relativeFileDirname}",
+          "${input:newBoilerplateApproachName}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "problemFilter",
+      "type": "promptString",
+      "description": "Problem/test filter, e.g. P00001",
+      "default": "P00001"
+    },
+    {
+      "id": "newBoilerplateApproachName",
+      "type": "promptString",
+      "description": "New boilerplate approach name, e.g. BruteForce, DepthFirstSearch, DynamicProgramming"
+    }
+  ]
 }

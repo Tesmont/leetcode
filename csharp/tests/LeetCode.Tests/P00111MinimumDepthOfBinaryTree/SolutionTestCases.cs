@@ -10,5 +10,6 @@ public static class SolutionTestCases
             { [3, 9, 20, null, null, 15, 7], 2 },
             { [2, null, 3, null, 4, null, 5, null, 6], 5 },
             { [], 0 },
+            { [1], 1 },
         };
 }

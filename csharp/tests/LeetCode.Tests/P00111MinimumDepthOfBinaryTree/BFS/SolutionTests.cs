@@ -1,8 +1,8 @@
-using LeetCode.P00111MinimumDepthOfBinaryTree.Initial;
+using LeetCode.P00111MinimumDepthOfBinaryTree.BFS;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00111MinimumDepthOfBinaryTree.SolutionTestCases;
 
-namespace LeetCode.Tests.P00111MinimumDepthOfBinaryTree.Initial;
+namespace LeetCode.Tests.P00111MinimumDepthOfBinaryTree.BFS;
 
 public sealed class SolutionTests
 {

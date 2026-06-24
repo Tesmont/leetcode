@@ -19,7 +19,20 @@ function Assert-ApproachName {
         throw "Approach name must be PascalCase and contain only letters and digits. Actual: '$Name'."
     }
 
-    $forbiddenNames = @("Best", "Preferred", "Optimal", "Main")
+    $forbiddenNames = @(
+        "Best",
+        "Preferred",
+        "Optimal",
+        "Main",
+        "Temp",
+        "New",
+        "Try2",
+        "Better",
+        "Final",
+        "Optimized2",
+        "Solution1",
+        "Solution2"
+    )
 
     if ($forbiddenNames -contains $Name) {
         throw "Approach name '$Name' is forbidden by repository rules. Use a real approach name, e.g. TwoPointers, Stack, DynamicProgramming."
@@ -108,6 +121,7 @@ function Convert-SolutionToBoilerplate {
     $classBody = $content.Substring($classOpenBrace + 1, $classCloseBrace - $classOpenBrace - 1)
 
     $methodRegex = [regex]'(?m)(?<signature>^\s{4}public\s+(?!sealed\s+class\b)(?!Solution\s*\()[^{;]+?\)\s*)\{'
+    $methodBlocks = @()
     $offset = 0
 
     while ($true) {
@@ -122,11 +136,17 @@ function Convert-SolutionToBoilerplate {
         $signature = $match.Groups['signature'].Value.TrimEnd()
         $replacement = "$signature`n    {`n        throw new System.NotImplementedException();`n    }"
 
-        $classBody = $classBody.Remove($match.Index, $closeBrace - $match.Index + 1).Insert($match.Index, $replacement)
-        $offset = $match.Index + $replacement.Length
+        $methodBlocks += $replacement
+        $offset = $closeBrace + 1
     }
 
-    return $content.Substring(0, $classOpenBrace + 1) + $classBody + $content.Substring($classCloseBrace)
+    if ($methodBlocks.Count -eq 0) {
+        throw "Could not find public solution methods to convert to boilerplate."
+    }
+
+    $newClassBody = "`n" + ($methodBlocks -join "`n`n") + "`n"
+
+    return $content.Substring(0, $classOpenBrace + 1) + $newClassBody + $content.Substring($classCloseBrace)
 }
 
 function Update-TestTemplate {
@@ -196,6 +216,7 @@ $newTestApproachDirectory = Join-Path $testProblemDirectory $NewApproachName
 
 $currentSolutionPath = Join-Path $currentSourceApproachDirectory "Solution.cs"
 $currentTestsPath = Join-Path $currentTestApproachDirectory "SolutionTests.cs"
+$testCasesPath = Join-Path $testProblemDirectory "SolutionTestCases.cs"
 $newSolutionPath = Join-Path $newSourceApproachDirectory "Solution.cs"
 $newTestsPath = Join-Path $newTestApproachDirectory "SolutionTests.cs"
 $readmePath = Join-Path $sourceProblemDirectory "README.md"
@@ -206,6 +227,10 @@ if (-not (Test-Path -LiteralPath $currentSolutionPath)) {
 
 if (-not (Test-Path -LiteralPath $currentTestsPath)) {
     throw "Current approach SolutionTests.cs does not exist: $currentTestsPath"
+}
+
+if (-not (Test-Path -LiteralPath $testCasesPath)) {
+    throw "Shared SolutionTestCases.cs does not exist: $testCasesPath"
 }
 
 if (Test-Path -LiteralPath $newSourceApproachDirectory) {

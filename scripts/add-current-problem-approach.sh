@@ -10,7 +10,7 @@ if [[ ! "$new_approach_name" =~ ^[A-Z][A-Za-z0-9]*$ ]]; then
 fi
 
 case "$new_approach_name" in
-    Best|Preferred|Optimal|Main)
+    Best|Preferred|Optimal|Main|Temp|New|Try2|Better|Final|Optimized2|Solution1|Solution2)
         echo "Approach name '$new_approach_name' is forbidden by repository rules. Use a real approach name, e.g. TwoPointers, Stack, DynamicProgramming." >&2
         exit 1
         ;;
@@ -47,6 +47,7 @@ test_problem_directory="$root/csharp/tests/LeetCode.Tests/$problem_name"
 
 current_solution_path="$source_problem_directory/$current_approach_name/Solution.cs"
 current_tests_path="$test_problem_directory/$current_approach_name/SolutionTests.cs"
+test_cases_path="$test_problem_directory/SolutionTestCases.cs"
 new_source_approach_directory="$source_problem_directory/$new_approach_name"
 new_test_approach_directory="$test_problem_directory/$new_approach_name"
 readme_path="$source_problem_directory/README.md"
@@ -58,6 +59,11 @@ fi
 
 if [[ ! -f "$current_tests_path" ]]; then
     echo "Current approach SolutionTests.cs does not exist: $current_tests_path" >&2
+    exit 1
+fi
+
+if [[ ! -f "$test_cases_path" ]]; then
+    echo "Shared SolutionTestCases.cs does not exist: $test_cases_path" >&2
     exit 1
 fi
 
@@ -101,6 +107,7 @@ class_open = text.index("{", class_match.start())
 class_close = matching_brace(text, class_open)
 body = text[class_open + 1:class_close]
 method_pattern = re.compile(r"(?m)(?P<signature>^\s{4}public\s+(?!sealed\s+class\b)(?!Solution\s*\()[^{;]+?\)\s*)\{")
+method_blocks = []
 
 offset = 0
 while True:
@@ -111,10 +118,13 @@ while True:
     close_brace = matching_brace(body, open_brace)
     signature = match.group("signature").rstrip()
     replacement = f"{signature}\n    {{\n        throw new System.NotImplementedException();\n    }}"
-    body = body[:match.start()] + replacement + body[close_brace + 1:]
-    offset = match.start() + len(replacement)
+    method_blocks.append(replacement)
+    offset = close_brace + 1
 
-target.write_text(text[:class_open + 1] + body + text[class_close:])
+if not method_blocks:
+    raise SystemExit("Could not find public solution methods to convert to boilerplate.")
+
+target.write_text(text[:class_open + 1] + "\n" + "\n\n".join(method_blocks) + "\n" + text[class_close:])
 PY
 
 python3 - "$current_tests_path" "$new_test_approach_directory/SolutionTests.cs" "$problem_name" "$current_approach_name" "$new_approach_name" <<'PY'

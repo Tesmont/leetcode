@@ -4,10 +4,11 @@ https://leetcode.com/problems/minimum-depth-of-binary-tree/
 
 ## Preferred implementation
 
-Initial
+BFS
 
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | Unknown | Unknown | Preferred |
+| BFS | O(n) | O(w) | Preferred |
+| DFS | O(n) | O(h) | Reference |

@@ -13,7 +13,7 @@ assert_approach_name() {
     fi
 
     case "$name" in
-        Best|Preferred|Optimal|Main)
+        Best|Preferred|Optimal|Main|Temp|New|Try2|Better|Final|Optimized2|Solution1|Solution2)
             echo "Approach name '$name' is forbidden by repository rules. Use a real approach name, e.g. TwoPointers, Stack, DynamicProgramming." >&2
             exit 1
             ;;

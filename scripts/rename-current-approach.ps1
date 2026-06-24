@@ -19,7 +19,20 @@ function Assert-ApproachName {
         throw "Approach name must be PascalCase and contain only letters and digits. Actual: '$Name'."
     }
 
-    $forbiddenNames = @("Best", "Preferred", "Optimal", "Main")
+    $forbiddenNames = @(
+        "Best",
+        "Preferred",
+        "Optimal",
+        "Main",
+        "Temp",
+        "New",
+        "Try2",
+        "Better",
+        "Final",
+        "Optimized2",
+        "Solution1",
+        "Solution2"
+    )
 
     if ($forbiddenNames -contains $Name) {
         throw "Approach name '$Name' is forbidden by repository rules. Use a real approach name, e.g. TwoPointers, Stack, DynamicProgramming."
