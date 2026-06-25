@@ -4,10 +4,11 @@ https://leetcode.com/problems/deepest-leaves-sum/
 
 ## Preferred implementation
 
-Initial
+BFS
 
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | O(n) | O(w) | Preferred |
+| BFS | O(n) | O(w) | Preferred |
+| DFS | O(n) | O(h) | Reference |

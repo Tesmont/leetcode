@@ -1,4 +1,4 @@
-namespace LeetCode.P01302DeepestLeavesSum.Initial;
+namespace LeetCode.P01302DeepestLeavesSum.BFS;
 
 /// <summary>
 /// LeetCode 1302. Deepest Leaves Sum.

@@ -1,8 +1,8 @@
-using LeetCode.P01302DeepestLeavesSum.Initial;
+using LeetCode.P01302DeepestLeavesSum.DFS;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P01302DeepestLeavesSum.SolutionTestCases;
 
-namespace LeetCode.Tests.P01302DeepestLeavesSum.Initial;
+namespace LeetCode.Tests.P01302DeepestLeavesSum.DFS;
 
 public sealed class SolutionTests
 {
