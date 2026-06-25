@@ -2,8 +2,12 @@
 
 https://leetcode.com/problems/deepest-leaves-sum/
 
+## Preferred implementation
+
+Initial
+
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | Unknown | Unknown | Not Implemented |
+| Initial | O(n) | O(w) | Preferred |

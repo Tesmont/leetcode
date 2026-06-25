@@ -2,8 +2,12 @@
 
 https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
 
+## Preferred implementation
+
+MonotonicQueue
+
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| MonotonicQueue | O(n) | O(n) | Implemented |
+| MonotonicQueue | O(n) | O(n) | Preferred |

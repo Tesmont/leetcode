@@ -10,4 +10,4 @@ Stack
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Stack | Unknown | Unknown | Preferred |
+| Stack | O(n) | O(n) | Preferred |

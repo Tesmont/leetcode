@@ -2,8 +2,12 @@
 
 https://leetcode.com/problems/sliding-window-maximum/
 
+## Preferred implementation
+
+MonotonicFunction
+
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| MonotonicFunction | Unknown | Unknown | Boilerplate |
+| MonotonicFunction | O(n) | O(n) | Preferred |

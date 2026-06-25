@@ -10,4 +10,4 @@ Initial
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | Unknown | Unknown | Preferred |
+| Initial | O(n) | O(n) | Preferred |

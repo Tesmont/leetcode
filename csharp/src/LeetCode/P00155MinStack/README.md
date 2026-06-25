@@ -2,8 +2,12 @@
 
 https://leetcode.com/problems/min-stack/
 
+## Preferred implementation
+
+Initial
+
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | Unknown | Unknown | Not Implemented |
+| Initial | O(1) | O(n) | Preferred |

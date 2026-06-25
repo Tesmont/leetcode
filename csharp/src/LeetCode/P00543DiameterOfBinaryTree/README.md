@@ -11,4 +11,4 @@ IterativeDFS
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
 | IterativeDFS | O(n) | O(h) | Preferred |
-| RecursiveDFS | Unknown | Unknown | Reference |
+| RecursiveDFS | O(n) | O(h) | Reference |

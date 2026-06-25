@@ -2,8 +2,12 @@
 
 https://leetcode.com/problems/next-greater-element-i/
 
+## Preferred implementation
+
+Initial
+
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | O(n + m) | O(n + m) | Implemented |
+| Initial | O(n + m) | O(n + m) | Preferred |

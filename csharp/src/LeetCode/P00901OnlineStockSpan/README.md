@@ -2,8 +2,12 @@
 
 https://leetcode.com/problems/online-stock-span/
 
+## Preferred implementation
+
+Initial
+
 ## Implementations
 
 | Implementation | Time | Space | Status |
 |---|---:|---:|---|
-| Initial | Unknown | Unknown | Not Implemented |
+| Initial | O(1) amortized | O(n) | Preferred |
