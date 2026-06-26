@@ -6,7 +6,7 @@ Every solution implementation must live in its own approach directory.
 
 The problem root directory must not contain `Solution.cs`.
 
-All implementations are structurally equal. The preferred or best implementation is marked in the problem `README.md`, not by moving files.
+All implementations are structurally equal.
 
 This avoids moving code between the problem root and approach folders when a better solution is added later.
 
@@ -18,7 +18,6 @@ csharp/
   src/
     LeetCode/
       P00002AddTwoNumbers/
-        README.md
         Initial/
           Solution.cs
         Recursive/
@@ -42,7 +41,6 @@ Rules:
 * one problem equals one directory
 * the problem root directory must not contain `Solution.cs`
 * every implementation lives in its own approach subdirectory
-* the problem root may contain `README.md`
 * tests mirror implementation approach directories for `SolutionTests.cs`
 * each problem has exactly one `SolutionTestCases.cs` in the root test directory
 * implementation test subdirectories must contain `SolutionTests.cs` only unless explicitly requested otherwise
@@ -68,7 +66,6 @@ When adding a new implementation approach to an existing problem, the AI must:
 * create only the matching test approach directory
 * create only the matching `SolutionTests.cs`
 * reuse the existing root `SolutionTestCases.cs`
-* update the problem `README.md`
 * not move existing implementations
 * not rename existing implementations
 * not modify existing implementations unless explicitly requested

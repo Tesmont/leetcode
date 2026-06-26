@@ -9,7 +9,6 @@ When given a new problem in boilerplate mode:
 * determine the implementation approach name
 * use `Initial` as the approach name if no approach is specified
 * create the source problem directory
-* create the problem `README.md`
 * create the source implementation approach directory
 * create `Solution.cs` inside the implementation approach directory
 * create the official LeetCode public class
@@ -23,7 +22,6 @@ When given a new problem in boilerplate mode:
 * create `SolutionTests.cs` inside the test implementation approach directory
 * add test cases based on problem examples to `SolutionTestCases.cs`
 * add test methods that consume `SolutionTestCases.cs` to `SolutionTests.cs`
-* update `README.md` with the implementation approach
 
 ## New Implementation Approach In Boilerplate Mode
 
@@ -38,6 +36,5 @@ When given a new implementation approach in boilerplate mode:
 * create `SolutionTests.cs` in the test implementation approach subdirectory
 * reuse the root problem `SolutionTestCases.cs`
 * do not create another `SolutionTestCases.cs`
-* update the problem `README.md`
 * do not move existing implementations
 * do not modify existing implementations unless explicitly requested

@@ -27,7 +27,6 @@ The AI may:
 * create a problem directory
 * create an implementation approach directory
 * create `Solution.cs` inside an implementation approach directory
-* create `README.md` in the problem root directory
 * create `SolutionTestCases.cs`
 * create `SolutionTests.cs`
 * copy examples from the problem statement into tests

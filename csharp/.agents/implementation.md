@@ -10,7 +10,6 @@ In implementation mode, the AI may:
 * add private helper methods inside the same `Solution.cs` file when they are useful for the solution
 * add local functions when they make the implementation clearer
 * update tests if the requested implementation exposes missing or weak coverage
-* update the problem `README.md` when complexity or preferred status changes
 
 In implementation mode, the AI must not:
 
@@ -34,6 +33,5 @@ When given an implementation request:
 * keep helper methods inside the same `Solution.cs` file
 * keep tests shared when possible
 * update approach-specific tests only when needed
-* update the problem `README.md` if complexity or preferred status changes
 * do not refactor unrelated approaches
 * do not change repository structure unless explicitly requested

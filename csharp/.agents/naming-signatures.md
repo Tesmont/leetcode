@@ -40,7 +40,6 @@ P00392IsSubsequence
 Files:
 
 ```text
-README.md
 Solution.cs
 SolutionTests.cs
 SolutionTestCases.cs
