@@ -169,31 +169,6 @@ function Update-TestTemplate {
         Replace("LeetCode.Tests.$ProblemName.$OldApproachName", "LeetCode.Tests.$ProblemName.$NewApproachName")
 }
 
-function Add-ReadmeImplementation {
-    param(
-        [Parameter(Mandatory = $true)]
-        [string] $ReadmePath,
-
-        [Parameter(Mandatory = $true)]
-        [string] $ApproachName
-    )
-
-    if (-not (Test-Path -LiteralPath $ReadmePath)) {
-        throw "README.md does not exist: $ReadmePath"
-    }
-
-    $content = Get-Content -LiteralPath $ReadmePath -Raw
-
-    if ($content -match "\| $([regex]::Escape($ApproachName)) \|") {
-        Write-Host "README already lists approach '$ApproachName'."
-        return
-    }
-
-    $line = "| $ApproachName | Unknown | Unknown | Reference |"
-    $trimmed = $content.TrimEnd()
-    Set-Content -LiteralPath $ReadmePath -Value ($trimmed + "`n" + $line + "`n") -NoNewline
-}
-
 Assert-ApproachName -Name $NewApproachName
 
 $pathInfo = Get-ProblemAndApproach -Directory $RelativeDirectory
@@ -219,7 +194,6 @@ $currentTestsPath = Join-Path $currentTestApproachDirectory "SolutionTests.cs"
 $testCasesPath = Join-Path $testProblemDirectory "SolutionTestCases.cs"
 $newSolutionPath = Join-Path $newSourceApproachDirectory "Solution.cs"
 $newTestsPath = Join-Path $newTestApproachDirectory "SolutionTests.cs"
-$readmePath = Join-Path $sourceProblemDirectory "README.md"
 
 if (-not (Test-Path -LiteralPath $currentSolutionPath)) {
     throw "Current approach Solution.cs does not exist: $currentSolutionPath"
@@ -260,9 +234,6 @@ $newTestContent = Update-TestTemplate `
     -NewApproachName $NewApproachName
 Set-Content -LiteralPath $newTestsPath -Value $newTestContent -NoNewline
 
-Add-ReadmeImplementation -ReadmePath $readmePath -ApproachName $NewApproachName
-
 Write-Host "Created boilerplate approach '$NewApproachName' for problem '$problemName'."
 Write-Host "Source: $newSolutionPath"
 Write-Host "Tests:  $newTestsPath"
-Write-Host "README updated: $readmePath"

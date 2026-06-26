@@ -20,7 +20,6 @@ Read based on the task:
 * `.agents/boilerplate.md` when creating, adding, scaffolding, preparing, or setting up a new problem or implementation approach
 * `.agents/implementation.md` when implementing, solving, completing, fixing, optimizing, or rewriting a solution
 * `.agents/tests.md` when creating or editing tests
-* `.agents/readme.md` when creating or editing a problem `README.md` or marking a preferred implementation
 * `.agents/workflows.md` when following an end-to-end repository workflow
 
 If a task crosses multiple areas, read every matching file. If unsure, read all files in `.agents/`.

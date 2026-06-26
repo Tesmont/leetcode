@@ -50,7 +50,6 @@ current_tests_path="$test_problem_directory/$current_approach_name/SolutionTests
 test_cases_path="$test_problem_directory/SolutionTestCases.cs"
 new_source_approach_directory="$source_problem_directory/$new_approach_name"
 new_test_approach_directory="$test_problem_directory/$new_approach_name"
-readme_path="$source_problem_directory/README.md"
 
 if [[ ! -f "$current_solution_path" ]]; then
     echo "Current approach Solution.cs does not exist: $current_solution_path" >&2
@@ -143,19 +142,6 @@ text = text.replace(f"LeetCode.Tests.{problem}.{old}", f"LeetCode.Tests.{problem
 target.write_text(text)
 PY
 
-python3 - "$readme_path" "$new_approach_name" <<'PY'
-from pathlib import Path
-import sys
-
-path = Path(sys.argv[1])
-approach = sys.argv[2]
-content = path.read_text()
-line = f"| {approach} | Unknown | Unknown | Reference |"
-if line not in content:
-    path.write_text(content.rstrip() + "\n" + line + "\n")
-PY
-
 echo "Created boilerplate approach '$new_approach_name' for problem '$problem_name'."
 echo "Source: $new_source_approach_directory/Solution.cs"
 echo "Tests:  $new_test_approach_directory/SolutionTests.cs"
-echo "README updated: $readme_path"
