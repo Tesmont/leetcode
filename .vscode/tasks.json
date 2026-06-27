@@ -98,13 +98,13 @@
       "problemMatcher": []
     },
     {
-      "label": "boilerplate: add approach to current problem",
+      "label": "csharp: add boilerplate approach to current problem",
       "type": "shell",
       "command": "bash",
       "args": [
-        "scripts/add-current-problem-approach.sh",
+        "scripts/add-current-csharp-problem-approach.sh",
         "${relativeFileDirname}",
-        "${input:newBoilerplateApproachName}"
+        "${input:newCsharpBoilerplateApproachName}"
       ],
       "windows": {
         "command": "powershell",
@@ -113,17 +113,51 @@
           "-ExecutionPolicy",
           "Bypass",
           "-File",
-          "scripts/add-current-problem-approach.ps1",
+          "scripts/add-current-csharp-problem-approach.ps1",
           "${relativeFileDirname}",
-          "${input:newBoilerplateApproachName}"
+          "${input:newCsharpBoilerplateApproachName}"
         ]
       },
       "linux": {
         "command": "bash",
         "args": [
-          "scripts/add-current-problem-approach.sh",
+          "scripts/add-current-csharp-problem-approach.sh",
           "${relativeFileDirname}",
-          "${input:newBoilerplateApproachName}"
+          "${input:newCsharpBoilerplateApproachName}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "csharp: rename current problem approach",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/rename-current-csharp-problem-approach.sh",
+        "${relativeFileDirname}",
+        "${input:renamedCsharpApproachName}"
+      ],
+      "windows": {
+        "command": "powershell",
+        "args": [
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/rename-current-csharp-problem-approach.ps1",
+          "${relativeFileDirname}",
+          "${input:renamedCsharpApproachName}"
+        ]
+      },
+      "linux": {
+        "command": "bash",
+        "args": [
+          "scripts/rename-current-csharp-problem-approach.sh",
+          "${relativeFileDirname}",
+          "${input:renamedCsharpApproachName}"
         ]
       },
       "options": {
@@ -140,9 +174,14 @@
       "default": "P00001"
     },
     {
-      "id": "newBoilerplateApproachName",
+      "id": "newCsharpBoilerplateApproachName",
       "type": "promptString",
-      "description": "New boilerplate approach name, e.g. BruteForce, DepthFirstSearch, DynamicProgramming"
+      "description": "New C# boilerplate approach name, e.g. BruteForce, DepthFirstSearch, DynamicProgramming"
+    },
+    {
+      "id": "renamedCsharpApproachName",
+      "type": "promptString",
+      "description": "New name for the current C# approach, e.g. PrefixMax, TwoPointers, MonotonicStack"
     }
   ]
 }

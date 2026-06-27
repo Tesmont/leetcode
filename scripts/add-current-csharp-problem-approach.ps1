@@ -48,23 +48,27 @@ function Get-ProblemAndApproach {
     $relativeDirectoryNormalized = $Directory.Replace('\', '/')
     $parts = $relativeDirectoryNormalized.Split('/', [System.StringSplitOptions]::RemoveEmptyEntries)
 
-    for ($i = 0; $i -lt $parts.Length; $i++) {
-        if ($parts[$i] -eq "LeetCode" -and $i + 2 -lt $parts.Length) {
+    for ($i = 0; $i + 4 -lt $parts.Length; $i++) {
+        if ($parts[$i] -eq "csharp" -and
+            $parts[$i + 1] -eq "src" -and
+            $parts[$i + 2] -eq "LeetCode") {
             return @{
-                Problem = $parts[$i + 1]
-                Approach = $parts[$i + 2]
+                Problem = $parts[$i + 3]
+                Approach = $parts[$i + 4]
             }
         }
 
-        if ($parts[$i] -eq "LeetCode.Tests" -and $i + 2 -lt $parts.Length) {
+        if ($parts[$i] -eq "csharp" -and
+            $parts[$i + 1] -eq "tests" -and
+            $parts[$i + 2] -eq "LeetCode.Tests") {
             return @{
-                Problem = $parts[$i + 1]
-                Approach = $parts[$i + 2]
+                Problem = $parts[$i + 3]
+                Approach = $parts[$i + 4]
             }
         }
     }
 
-    throw "Cannot determine problem and approach from path '$Directory'. Run this task from a file inside an approach directory."
+    throw "Cannot determine a C# problem and approach from path '$Directory'. Run this task from a file inside a C# approach directory."
 }
 
 function Find-MatchingBrace {

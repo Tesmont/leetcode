@@ -38,10 +38,12 @@ When rules conflict, use this priority order:
 
 ## Default Behavior
 
+When the user describes the intended algorithm without naming the approach, derive a clear PascalCase approach name from that description and use it instead of `Initial`.
+
 If unsure:
 
 * generate minimal boilerplate
-* use `Initial` as the first implementation approach name
+* use `Initial` as the first implementation approach name only when the approach is unknown
 * do not implement the solution
 * do not add extra abstractions
 * do not change repository structure

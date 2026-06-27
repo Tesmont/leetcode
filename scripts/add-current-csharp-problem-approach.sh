@@ -22,22 +22,22 @@ IFS='/' read -r -a parts <<< "$relative_directory_normalized"
 problem_name=""
 current_approach_name=""
 
-for ((i = 0; i < ${#parts[@]}; i++)); do
-    if [[ "${parts[$i]}" == "LeetCode" && $((i + 2)) -lt ${#parts[@]} ]]; then
-        problem_name="${parts[$((i + 1))]}"
-        current_approach_name="${parts[$((i + 2))]}"
+for ((i = 0; i + 4 < ${#parts[@]}; i++)); do
+    if [[ "${parts[$i]}" == "csharp" && "${parts[$((i + 1))]}" == "src" && "${parts[$((i + 2))]}" == "LeetCode" ]]; then
+        problem_name="${parts[$((i + 3))]}"
+        current_approach_name="${parts[$((i + 4))]}"
         break
     fi
 
-    if [[ "${parts[$i]}" == "LeetCode.Tests" && $((i + 2)) -lt ${#parts[@]} ]]; then
-        problem_name="${parts[$((i + 1))]}"
-        current_approach_name="${parts[$((i + 2))]}"
+    if [[ "${parts[$i]}" == "csharp" && "${parts[$((i + 1))]}" == "tests" && "${parts[$((i + 2))]}" == "LeetCode.Tests" ]]; then
+        problem_name="${parts[$((i + 3))]}"
+        current_approach_name="${parts[$((i + 4))]}"
         break
     fi
 done
 
 if [[ -z "$problem_name" || -z "$current_approach_name" ]]; then
-    echo "Cannot determine problem and approach from path '$relative_directory'. Run this task from a file inside an approach directory." >&2
+    echo "Cannot determine a C# problem and approach from path '$relative_directory'. Run this task from a file inside a C# approach directory." >&2
     exit 1
 fi
 
