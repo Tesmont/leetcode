@@ -1,8 +1,8 @@
-using LeetCode.P01466ReorderRoutesToMakeAllPathsLeadToTheCityZero.Initial;
+using LeetCode.P01466ReorderRoutesToMakeAllPathsLeadToTheCityZero.RecursiveDFSReorderFlag;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P01466ReorderRoutesToMakeAllPathsLeadToTheCityZero.SolutionTestCases;
 
-namespace LeetCode.Tests.P01466ReorderRoutesToMakeAllPathsLeadToTheCityZero.Initial;
+namespace LeetCode.Tests.P01466ReorderRoutesToMakeAllPathsLeadToTheCityZero.RecursiveDFSReorderFlag;
 
 public sealed class SolutionTests
 {
