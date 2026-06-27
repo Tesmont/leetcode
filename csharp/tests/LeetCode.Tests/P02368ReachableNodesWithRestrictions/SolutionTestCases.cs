@@ -1,0 +1,23 @@
+using Xunit;
+
+namespace LeetCode.Tests.P02368ReachableNodesWithRestrictions;
+
+public static class SolutionTestCases
+{
+    public static TheoryData<int, int[][], int[], int> ReachableNodesCases =>
+        new()
+        {
+            {
+                7,
+                [[0, 1], [1, 2], [3, 1], [4, 0], [0, 5], [5, 6]],
+                [4, 5],
+                4
+            },
+            {
+                7,
+                [[0, 1], [0, 2], [0, 5], [0, 4], [3, 2], [6, 5]],
+                [4, 2, 1],
+                3
+            },
+        };
+}
