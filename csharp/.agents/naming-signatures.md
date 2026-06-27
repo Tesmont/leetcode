@@ -54,6 +54,8 @@ Initial
 Recursive
 Stack
 MonotonicStack
+MonotonicQueue
+MonotonicDeque
 DynamicProgramming
 BinarySearch
 TwoPointers

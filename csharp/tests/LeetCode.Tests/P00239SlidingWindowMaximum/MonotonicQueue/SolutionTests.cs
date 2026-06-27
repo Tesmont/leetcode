@@ -1,8 +1,8 @@
-using LeetCode.P00239SlidingWindowMaximum.MonotonicFunction;
+using LeetCode.P00239SlidingWindowMaximum.MonotonicQueue;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00239SlidingWindowMaximum.SolutionTestCases;
 
-namespace LeetCode.Tests.P00239SlidingWindowMaximum.MonotonicFunction;
+namespace LeetCode.Tests.P00239SlidingWindowMaximum.MonotonicQueue;
 
 public sealed class SolutionTests
 {

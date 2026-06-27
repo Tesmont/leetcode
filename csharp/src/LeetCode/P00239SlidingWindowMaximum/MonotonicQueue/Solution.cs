@@ -1,4 +1,4 @@
-namespace LeetCode.P00239SlidingWindowMaximum.MonotonicFunction;
+namespace LeetCode.P00239SlidingWindowMaximum.MonotonicQueue;
 
 /// <summary>
 /// LeetCode 239. Sliding Window Maximum.
