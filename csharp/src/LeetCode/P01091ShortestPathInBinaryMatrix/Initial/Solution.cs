@@ -16,6 +16,13 @@ public sealed class Solution
         int n = grid.Length;
         int lastIndex = n - 1;
 
+        ReadOnlySpan<(int rowShift, int columnShift)> directions =
+        [
+            (-1, -1), (-1, 0), (-1, 1),
+            (0, -1),           (0, 1),
+            (1, -1),  (1, 0),  (1, 1),
+        ];
+
         Queue<(int row, int column)> queue = new();
         grid[0][0] = 1;
         queue.Enqueue((0, 0));
@@ -36,30 +43,23 @@ public sealed class Solution
                     return distance;
                 }
 
-                TryEnqueue(row + 1, column);
-                TryEnqueue(row - 1, column);
-                TryEnqueue(row, column + 1);
-                TryEnqueue(row, column - 1);
-                TryEnqueue(row + 1, column + 1);
-                TryEnqueue(row + 1, column - 1);
-                TryEnqueue(row - 1, column + 1);
-                TryEnqueue(row - 1, column - 1);
+                foreach ((int rowShift, int columnShift) in directions)
+                {
+                    int nextRow = row + rowShift;
+                    int nextColumn = column + columnShift;
+
+                    if (nextRow < 0 || nextRow >= n || nextColumn < 0 || nextColumn >= n
+                        || grid[nextRow][nextColumn] == 1)
+                    {
+                        continue;
+                    }
+
+                    grid[nextRow][nextColumn] = 1;
+                    queue.Enqueue((nextRow, nextColumn));
+                }
             }
         }
 
         return -1;
-
-        void TryEnqueue(int nextRow, int nextColumn)
-        {
-            if (nextRow < 0 || nextRow >= n || nextColumn < 0 || nextColumn >= n
-                || grid[nextRow][nextColumn] == 1)
-            {
-                return;
-            }
-
-            grid[nextRow][nextColumn] = 1;
-
-            queue.Enqueue((nextRow, nextColumn));
-        }
     }
 }
