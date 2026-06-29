@@ -1,8 +1,8 @@
-using LeetCode.P00863AllNodesDistanceKInBinaryTree.Initial;
+using LeetCode.P00863AllNodesDistanceKInBinaryTree.AdjacencyListBFS;
 using Xunit;
 using RootSolutionTestCases = LeetCode.Tests.P00863AllNodesDistanceKInBinaryTree.SolutionTestCases;
 
-namespace LeetCode.Tests.P00863AllNodesDistanceKInBinaryTree.Initial;
+namespace LeetCode.Tests.P00863AllNodesDistanceKInBinaryTree.AdjacencyListBFS;
 
 public sealed class SolutionTests
 {

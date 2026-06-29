@@ -1,4 +1,4 @@
-namespace LeetCode.P00863AllNodesDistanceKInBinaryTree.Initial;
+namespace LeetCode.P00863AllNodesDistanceKInBinaryTree.ParentMapBFS;
 
 /// <summary>
 /// LeetCode 863. All Nodes Distance K in Binary Tree.
