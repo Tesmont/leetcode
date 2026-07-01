@@ -16,6 +16,11 @@ public sealed class Solution
             return 0;
         }
 
+        if (k >= m + n - 3)
+        {
+            return m + n - 2;
+        }
+
         int targetRow = m - 1;
         int targetColumn = n - 1;
 
