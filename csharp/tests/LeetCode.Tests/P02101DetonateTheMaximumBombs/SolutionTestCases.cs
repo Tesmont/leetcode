@@ -1,0 +1,15 @@
+using Xunit;
+
+namespace LeetCode.Tests.P02101DetonateTheMaximumBombs;
+
+public static class SolutionTestCases
+{
+    public static TheoryData<int[][], int> MaximumDetonationCases =>
+        new()
+        {
+            { [[2, 1, 3], [6, 1, 4]], 2 },
+            { [[1, 1, 5], [10, 10, 5]], 1 },
+            { [[1, 2, 3], [2, 3, 1], [3, 4, 2], [4, 5, 3], [5, 6, 4]], 5 },
+            { [[1, 1, 1]], 1 },
+        };
+}
